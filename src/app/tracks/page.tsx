@@ -1,7 +1,7 @@
 export default function Tracks() {
-    return (
-        <div>
-            Tracks
-        </div>
-    );
+  return (
+    <div style={{ height: "200vh" }}>
+      Tracks
+    </div>
+  );
 }
