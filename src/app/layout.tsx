@@ -7,15 +7,16 @@ import { Footer } from "@/components/Footer/Footer";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "@/Theme/theme";
+import { Box } from "@mui/material";
 
 
 const fontRegular = Hedvig_Letters_Serif({
-  variable: "--font-geist-sans",
+  variable: "--font-hedvig-letters-serif",
   subsets: ["latin"],
   weight: ["400"]
 });
 const fontBold = Arsenal({
-  variable: "--font-geist-sans",
+  variable: "--font-arsenal",
   subsets: ["latin"],
   weight: ["700"]
 });
@@ -26,26 +27,25 @@ export const metadata: Metadata = {
 
 };
 
+
 export default function RootLayout({ children }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     // TODO подумай о языке
     <html lang="en">
-    {/*<head>*/}
-    {/*  <meta name="viewport" content="initial-scale=1, width=device-width" />*/}
-    {/*</head>*/}
-
     <body className={`${fontRegular.variable} ${fontBold.variable}`}>
     <AppRouterCacheProvider options={{ key: "css" }}>
       <ThemeProvider theme={theme}>
-        <div className={"layout"}>
+        <Box className={"layout"}>
           <Header />
           <div className={"layout__content"}>
             {children}
           </div>
           <Footer />
-        </div>
+        </Box>
       </ThemeProvider>
     </AppRouterCacheProvider>
     </body>

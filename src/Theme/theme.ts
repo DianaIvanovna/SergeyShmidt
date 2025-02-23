@@ -1,18 +1,16 @@
 "use client";
 import { createTheme } from "@mui/material/styles";
 import { muiComponents } from "@/Theme/overrides";
+import { muiTypography } from "@/Theme/overrides/Typography";
 
 let theme = createTheme({
-  typography: {
-    // fontFamily: "var(--font-geist-sans)"
-    subtitle1: {
-      // fontSize: 12,
-    },
-    body1: {
-      // fontWeight: 500,
-    },
-    button: {
-      // fontStyle: 'italic',
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 380,
+      md: 640,
+      lg: 1024,
+      xl: 1920
     }
   },
   components: {
@@ -36,6 +34,9 @@ let theme = createTheme({
 
 theme = createTheme(theme, {
   components: { ...muiComponents(theme) }
+});
+theme = createTheme(theme, {
+  typography: { ...muiTypography(theme) }
 });
 
 export default theme;
