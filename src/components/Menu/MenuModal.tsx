@@ -1,7 +1,9 @@
 import { Box, IconButton, Modal, SvgIcon, Typography } from "@mui/material";
 import React, { FC, PropsWithChildren } from "react";
-import CloseIcon from "@/icons/close.svg";
+import CloseIcon from "@/shared/icons/close.svg";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Routes } from "@/components/Menu/constants";
 
 interface MenuModalProp {
   open: boolean,
@@ -15,19 +17,27 @@ const LinkWrapper: FC<PropsWithChildren> = ({ children }) => {
 };
 
 export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
+  const pathname = usePathname();
 
   return (
     <Modal
       open={open}
 
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
+      slotProps={{
+        backdrop: {
+          sx: {
+            backgroundColor: "transparent",
+            backdropFilter: "blur(5px)"
+          }
+        }
+      }}
     >
       <Box
         sx={{ display: "flex", alignItems: "center", justifyContent: "center", position: "relative", height: "100%" }}>
         <IconButton onClick={onClose} sx={{ position: "absolute", left: "28px", top: "28px" }}>
           <SvgIcon component={CloseIcon} viewBox="0 0 44 44" />
         </IconButton>
+
 
         <Box sx={{
           width: "392px",
@@ -37,33 +47,16 @@ export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
           boxSizing: "border-box"
 
         }}>
-          <LinkWrapper>
-            <Link href={"./"}>
-              <Typography variant={"h1"} component={"span"}>Home</Typography>
-            </Link></LinkWrapper>
-          <LinkWrapper>
-            <Link href={"./tracks"}>
-              <Typography variant={"h1"} component={"span"}>Tracks</Typography>
-            </Link>
-          </LinkWrapper>
-          <LinkWrapper>
-            <Link href={"./poems"}>
-              <Typography variant={"h1"} component={"span"}>Poems</Typography>
-            </Link>
-          </LinkWrapper>
-          <LinkWrapper>
-            <Link href={"./website"}>
-              <Typography variant={"h1"} component={"span"}>Website</Typography>
-            </Link>
-          </LinkWrapper>
-          <LinkWrapper>
-            <Link href={"./404"}>
-              <Typography variant={"h1"} component={"span"}>404</Typography>
-            </Link>
-          </LinkWrapper>
+          {
+            Object.values(Routes).map((item, key) => (
+              <LinkWrapper key={key}>
+                <Link href={item} onClick={onClose}>
+                  <Typography variant={"h1"} color={item === pathname ? "primary" : ""}>{item}</Typography>
+                </Link>
+              </LinkWrapper>
+            ))
+          }
         </Box>
-
-
       </Box>
     </Modal>
   );

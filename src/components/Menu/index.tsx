@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IconButton, SvgIcon } from "@mui/material";
-import MenuIcon from "@/icons/icn.svg";
+import MenuIcon from "@/shared/icons/icn.svg";
 import { MenuModal } from "@/components/Menu/MenuModal";
 
 export const Menu = () => {

@@ -2,8 +2,10 @@
 import { createTheme } from "@mui/material/styles";
 import { muiComponents } from "@/Theme/overrides";
 import { muiTypography } from "@/Theme/overrides/Typography";
+import { muiPalette } from "@/Theme/palette";
 
 let theme = createTheme({
+  palette: muiPalette(),
   breakpoints: {
     values: {
       xs: 0,
@@ -12,23 +14,6 @@ let theme = createTheme({
       lg: 1024,
       xl: 1920
     }
-  },
-  components: {
-    // MuiIconButton: {
-    //   styleOverrides: {
-    //     root: {
-    //       borderRadius: "0",
-    //       color: "black",
-    //       "&:hover": {
-    //         // backgroundColor: "none"
-    //         color: "green"
-    //       },
-    //       ":active": {
-    //         color: "red"
-    //       }
-    //     }
-    //   }
-    // }
   }
 });
 
