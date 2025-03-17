@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Arsenal, Hedvig_Letters_Serif } from "next/font/google";
-// import "./globals.scss";
 import "./page.scss";
 import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
@@ -32,7 +31,6 @@ export default function RootLayout({ children }: Readonly<{
   children: React.ReactNode;
 }>) {
 
-
   return (
     // TODO подумай о языке
     <html lang="en">
@@ -41,9 +39,9 @@ export default function RootLayout({ children }: Readonly<{
       <ThemeProvider theme={theme}>
         <Box className={"layout"}>
           <Header />
-          <div className={"layout__content"}>
+          <Box className={"layout__content"}>
             {children}
-          </div>
+          </Box>
           <Footer />
         </Box>
       </ThemeProvider>

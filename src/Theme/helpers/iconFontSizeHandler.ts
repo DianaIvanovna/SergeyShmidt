@@ -5,7 +5,10 @@ export const iconFontSizeHandler = (_theme: Theme, size: SvgIconProps["fontSize"
   switch (size) {
     case "small":
       return {
-        fontSize: "32px"
+        fontSize: "32px",
+        [_theme.breakpoints.down("lg")]: {
+          fontSize: "28px"
+        }
       };
     case "medium":
       return {
