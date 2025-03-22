@@ -1,0 +1,67 @@
+$--icon-color: #E5CFCF;
+$--icon-color-hover: #D6C2C2;
+$--icon-color-active: #CCC1C1;
+
+$--icon-color-second: #EAE7E7;
+$--icon-color-second-hover: #E8DDDD;
+$--icon-color-second-active: #454545;
+
+.MuiButtonBase-root {
+  svg {
+    fill: transparent;
+  }
+
+  & [ class *= "fill-main" ] {
+    fill: $--icon-color;
+  }
+
+  & [ class *= "stroke-main" ] {
+    stroke: $--icon-color;
+  }
+
+  & [ class *= "fill-second" ] {
+    fill: $--icon-color-second;
+  }
+
+  & [ class *= "stroke-second" ] {
+    stroke: $--icon-color-second;
+  }
+
+
+  &:hover {
+    & [ class *= "fill-main" ] {
+      fill: $--icon-color-hover;
+    }
+
+    & [ class *= "stroke-main" ] {
+      stroke: $--icon-color-hover;
+    }
+
+    & [ class *= "fill-second" ] {
+      fill: $--icon-color-second-hover;
+    }
+
+    & [ class *= "stroke-second" ] {
+      stroke: $--icon-color-second-hover;
+    }
+  }
+
+  &:active {
+    & [ class *= "fill-main" ] {
+      fill: $--icon-color-active;
+    }
+
+    & [ class *= "stroke-main" ] {
+      stroke: $--icon-color-active;
+    }
+
+    & [ class *= "fill-second" ] {
+      fill: $--icon-color-second-active;
+    }
+
+    & [ class *= "stroke-second" ] {
+      stroke: $--icon-color-second-active;
+    }
+  }
+
+}

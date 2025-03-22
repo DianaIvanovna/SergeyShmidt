@@ -1,24 +1,9 @@
 
 .header {
   position: sticky;
-  top: 20px;
-  border: 1px solid red;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.header__logo {
-  //@include h2();
-}
-
-//.header__menu {
-//  img {
-//    width: 45px;
-//    height: 45px;
-//    //@media (min-width: $--tablet) {
-//    //  width: 58px;
-//    //  height: 58px;
-//    //}
-//  }
-//}

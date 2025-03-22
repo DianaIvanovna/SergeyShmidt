@@ -3,7 +3,7 @@ import React, { FC, PropsWithChildren } from "react";
 import CloseIcon from "@/shared/icons/close.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Routes } from "@/components/Menu/constants";
+import { Routes } from "@/shared/constants/Routes";
 
 interface MenuModalProp {
   open: boolean,

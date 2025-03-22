@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IconButton, SvgIcon } from "@mui/material";
-import MenuIcon from "@/shared/icons/icn.svg";
+import MenuIcon2 from "@/shared/icons/icn.svg";
 import { MenuModal } from "@/components/Menu/MenuModal";
 
 export const Menu = () => {
@@ -15,14 +15,13 @@ export const Menu = () => {
     setOpen(false);
   }
 
+
   return (
     <>
       <IconButton onClick={onClick}>
-        <SvgIcon component={MenuIcon} viewBox="0 0 58 58" />
+        <SvgIcon component={MenuIcon2} viewBox="0 0 58 58" />
       </IconButton>
       <MenuModal open={open} onClose={onClose} />
     </>
-
-
   );
 };

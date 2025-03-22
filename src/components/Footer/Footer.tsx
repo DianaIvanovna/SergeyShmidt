@@ -7,27 +7,16 @@ import youtubeIcon from "@/shared/icons/youtube.svg";
 import yandexIcon from "@/shared/icons/yandex.svg";
 import amozonIcon from "@/shared/icons/amozon.svg";
 import linktreeIcon from "@/shared/icons/linktree.svg";
+import Link from "next/link";
+import React from "react";
+import { Routes } from "@/shared/constants/Routes";
 
 
 export const Footer = () => {
   return <div
     className={"footer"}
-    //   style={{
-    //   height: "107px",
-    //
-    //   width: "100%",
-    //   display: "flex",
-    //   flexDirection: "column",
-    //   // flexWrap: "wrap",
-    //   position: "sticky",
-    //   bottom: "20px",
-    //   alignSelf: "flex-start"
-    // }}
   >
-
-    <Box
-      //sx={{ display: "flex", gap: "60px" }}
-      className={"footer__link"}>
+    <Box className={"footer__link"}>
       <IconButton>
         <SvgIcon fontSize={"small"} component={spotifyIcon} viewBox="0 0 44 44" />
       </IconButton>
@@ -49,8 +38,13 @@ export const Footer = () => {
     </Box>
 
     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-      <Typography variant={"h6"}>GET IN TOUCH: MAIL</Typography>
-      <Typography variant={"h6"}>PRIVACY POLICY</Typography>
+      <Typography variant={"h6"}>GET IN TOUCH:
+        <a href="mailto:mail@htmlacademy.ru"> MAIL</a>
+      </Typography>
+      <Link href={Routes.PRIVACY_POLICY} className={"footer__privacy-policy"}>
+        <Typography variant={"h6"}>PRIVACY POLICY</Typography>
+      </Link>
+
       <Typography variant={"h6"}>Copyright 2024 | All Rights Reserved</Typography>
     </Box>
   </div>;

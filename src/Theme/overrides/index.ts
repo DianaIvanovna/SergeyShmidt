@@ -1,6 +1,7 @@
 // ** MUI Imports
 import { Theme } from "@mui/material/styles";
 import { SvgIcon } from "@/Theme/overrides/SvgIcon";
+import { IconButton } from "@/Theme/overrides/iconButton";
 
 // ** Overrides Imports
 
@@ -21,6 +22,7 @@ export const muiComponents = (theme: Theme) => {
   // const toggleButton = MuiToggleButton(theme);
   // const toggleButtonGroup = MuiToggleButtonGroup(theme);
   const svgIcon = SvgIcon(theme);
+  const iconButton = IconButton();
   // const checkbox = MuiCheckbox(theme);
   // const radio = MuiRadio(theme);
   // const select = Select(theme);
@@ -29,7 +31,7 @@ export const muiComponents = (theme: Theme) => {
   return Object.assign(
     // button,
     // select,
-    // iconButton,
+    iconButton,
     // buttonGroup,
     // toggleButton,
     // toggleButtonGroup,

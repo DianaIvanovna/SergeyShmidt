@@ -17,7 +17,7 @@ const fontRegular = Hedvig_Letters_Serif({
 const fontBold = Arsenal({
   variable: "--font-arsenal",
   subsets: ["latin"],
-  weight: ["700"]
+  weight: ["700", "400"]
 });
 
 export const metadata: Metadata = {

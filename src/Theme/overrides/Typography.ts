@@ -31,11 +31,17 @@ export const muiTypography = (theme: Theme): ThemeOptions["typography"] => {
       fontFamily: "var(--font-hedvig-letters-serif)",
       fontWeight: 400,
       fontSize: "20px",
-      lineHeight: "20px",
-      letterSpacing: "2%",
+      lineHeight: "120%",
+      letterSpacing: ".23em",
+      textDecoration: "underline",
+
+      textDecorationThickness: "1px",
+      textUnderlineOffset: "3px",
+
+
       [theme.breakpoints.up("md")]: {
         fontSize: "24px",
-        lineHeight: "32.16px"
+        lineHeight: "120%"
       }
     },
     h4: {
