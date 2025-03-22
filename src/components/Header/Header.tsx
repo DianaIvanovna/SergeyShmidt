@@ -2,6 +2,7 @@
 import "./Header.scss";
 import React from "react";
 import { Menu } from "@/components/Menu";
+import { Typography } from "@mui/material";
 
 
 export const Header = () => {
@@ -10,6 +11,8 @@ export const Header = () => {
       className={"header"}
     >
       <Menu />
+      <Typography variant={"h2"}>SERGEY
+        <br />SHMIDT</Typography>
     </div>
   );
 };

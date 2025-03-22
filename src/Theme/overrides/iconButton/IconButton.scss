@@ -1,10 +1,17 @@
+// иконки-кнопки?
 $--icon-color: #E5CFCF;
 $--icon-color-hover: #D6C2C2;
 $--icon-color-active: #CCC1C1;
 
+// иконки-ссылки?
 $--icon-color-second: #EAE7E7;
 $--icon-color-second-hover: #E8DDDD;
 $--icon-color-second-active: #454545;
+
+//отдельные цвета для кнопки закрытия -_-
+$--icon-color-close: #F1EDED;
+$--icon-color-close-hover: #E8DDDD;
+$--icon-color-close-active: #454545;
 
 .MuiButtonBase-root {
   svg {
@@ -27,6 +34,10 @@ $--icon-color-second-active: #454545;
     stroke: $--icon-color-second;
   }
 
+  & [ class *= "stroke-close" ] {
+    stroke: $--icon-color-close;
+  }
+
 
   &:hover {
     & [ class *= "fill-main" ] {
@@ -43,6 +54,10 @@ $--icon-color-second-active: #454545;
 
     & [ class *= "stroke-second" ] {
       stroke: $--icon-color-second-hover;
+    }
+
+    & [ class *= "stroke-close" ] {
+      stroke: $--icon-color-close-hover;
     }
   }
 
@@ -61,6 +76,10 @@ $--icon-color-second-active: #454545;
 
     & [ class *= "stroke-second" ] {
       stroke: $--icon-color-second-active;
+    }
+
+    & [ class *= "stroke-close" ] {
+      stroke: $--icon-color-close-active;
     }
   }
 

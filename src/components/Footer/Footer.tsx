@@ -35,17 +35,18 @@ export const Footer = () => {
       <IconButton>
         <SvgIcon fontSize={"small"} component={linktreeIcon} viewBox="0 0 45 45" />
       </IconButton>
+
     </Box>
 
     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-      <Typography variant={"h6"}>GET IN TOUCH:
-        <a href="mailto:mail@htmlacademy.ru"> MAIL</a>
+      <Typography variant={"h6"}>GET IN TOUCH:{" "}
+        <a href="mailto:mail@htmlacademy.ru" className={"footer__mail"}>MAIL</a>
       </Typography>
       <Link href={Routes.PRIVACY_POLICY} className={"footer__privacy-policy"}>
         <Typography variant={"h6"}>PRIVACY POLICY</Typography>
       </Link>
 
-      <Typography variant={"h6"}>Copyright 2024 | All Rights Reserved</Typography>
+      <Typography variant={"h6"}>Copyright {new Date().getUTCFullYear()} | All Rights Reserved</Typography>
     </Box>
   </div>;
 };

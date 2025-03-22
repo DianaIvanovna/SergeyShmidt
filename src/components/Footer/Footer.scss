@@ -18,8 +18,18 @@
 
   &__privacy-policy {
     display: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
     @media (min-width: $--lg) {
       display: block;
     }
+  }
+
+  &__mail {
+    text-decoration: underline;
+
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px
   }
 }

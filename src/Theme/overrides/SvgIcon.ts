@@ -1,7 +1,7 @@
 import { Theme } from "@mui/material/styles";
-import { OverrideComponentType } from "@/Theme/type";
-import { iconFontSizeHandler } from "@/Theme/helpers/iconFontSizeHandler";
-import themeConfig from "@/Theme/config";
+import { OverrideComponentType } from "@/theme/type";
+import { iconFontSizeHandler } from "@/theme/helpers/iconFontSizeHandler";
+import themeConfig from "@/theme/config";
 
 
 export const SvgIcon = (theme: Theme): OverrideComponentType<"MuiSvgIcon"> => {

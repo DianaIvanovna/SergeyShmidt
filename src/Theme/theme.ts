@@ -1,8 +1,9 @@
 "use client";
 import { createTheme } from "@mui/material/styles";
-import { muiComponents } from "@/Theme/overrides";
-import { muiTypography } from "@/Theme/overrides/Typography";
-import { muiPalette } from "@/Theme/palette";
+import { muiComponents } from "@/theme/overrides";
+import { muiPalette } from "@/theme/palette";
+import { muiTypography } from "@/theme/overrides/Typography/Typography";
+
 
 let theme = createTheme({
   palette: muiPalette(),

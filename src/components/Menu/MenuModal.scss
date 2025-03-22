@@ -1,0 +1,14 @@
+.close-icon.MuiButtonBase-root {
+  position: absolute;
+  top: 20px;
+  left: 18px;
+  @media (min-width: $--sm) {
+    left: 24px;
+  }
+  @media (min-width: $--md) {
+    left: 80px;
+  }
+  @media (min-width: $--lg) {
+    left: 112px;
+  }
+}

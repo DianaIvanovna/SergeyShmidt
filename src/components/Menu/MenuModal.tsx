@@ -4,6 +4,7 @@ import CloseIcon from "@/shared/icons/close.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Routes } from "@/shared/constants/Routes";
+import "./MenuModal.scss";
 
 interface MenuModalProp {
   open: boolean,
@@ -34,7 +35,7 @@ export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
     >
       <Box
         sx={{ display: "flex", alignItems: "center", justifyContent: "center", position: "relative", height: "100%" }}>
-        <IconButton onClick={onClose} sx={{ position: "absolute", left: "28px", top: "28px" }}>
+        <IconButton onClick={onClose} className={"close-icon"}>
           <SvgIcon component={CloseIcon} viewBox="0 0 44 44" />
         </IconButton>
 

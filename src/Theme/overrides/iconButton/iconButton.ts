@@ -1,4 +1,4 @@
-import { OverrideComponentType } from "@/Theme/type";
+import { OverrideComponentType } from "@/theme/type";
 import "./IconButton.scss";
 
 
@@ -8,6 +8,7 @@ export const IconButton = (): OverrideComponentType<"MuiIconButton"> => {
     MuiIconButton: {
       styleOverrides: {
         root: () => ({
+          padding: 0,
           "&:hover": {
             backgroundColor: "transparent"
           },
