@@ -10,43 +10,57 @@ import linktreeIcon from "@/shared/icons/linktree.svg";
 import Link from "next/link";
 import React from "react";
 import { Routes } from "@/shared/constants/Routes";
+import { animated, useSpring } from "@react-spring/web";
 
 
 export const Footer = () => {
-  return <div
-    className={"footer"}
-  >
-    <Box className={"footer__link"}>
-      <IconButton>
-        <SvgIcon fontSize={"small"} component={spotifyIcon} viewBox="0 0 44 44" />
-      </IconButton>
-      <IconButton>
-        <SvgIcon fontSize={"small"} component={appleIcon} viewBox="0 0 45 45" />
-      </IconButton>
-      <IconButton>
-        <SvgIcon fontSize={"small"} component={youtubeIcon} viewBox="0 0 51 39" />
-      </IconButton>
-      <IconButton>
-        <SvgIcon fontSize={"small"} component={yandexIcon} viewBox="0 0 45 45" />
-      </IconButton>
-      <IconButton>
-        <SvgIcon fontSize={"small"} component={amozonIcon} viewBox="0 0 45 45" />
-      </IconButton>
-      <IconButton>
-        <SvgIcon fontSize={"small"} component={linktreeIcon} viewBox="0 0 45 45" />
-      </IconButton>
+  const springs = useSpring({
+    from: { bottom: "-100px", opacity: 0 },
+    to: { bottom: "0px", opacity: 1 },
+    delay: 300
+  });
 
-    </Box>
 
-    <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-      <Typography variant={"h6"}>GET IN TOUCH:{" "}
-        <a href="mailto:mail@htmlacademy.ru" className={"footer__mail"}>MAIL</a>
-      </Typography>
-      <Link href={Routes.PRIVACY_POLICY} className={"footer__privacy-policy"}>
-        <Typography variant={"h6"}>PRIVACY POLICY</Typography>
-      </Link>
+  return (
+    <animated.div
+      className={"footer"}
+      style={{
+        position: "relative",
+        ...springs
+      }}
+    >
+      <Box className={"footer__link"}>
+        <IconButton>
+          <SvgIcon fontSize={"small"} component={spotifyIcon} viewBox="0 0 44 44" />
+        </IconButton>
+        <IconButton>
+          <SvgIcon fontSize={"small"} component={appleIcon} viewBox="0 0 45 45" />
+        </IconButton>
+        <IconButton>
+          <SvgIcon fontSize={"small"} component={youtubeIcon} viewBox="0 0 51 39" />
+        </IconButton>
+        <IconButton>
+          <SvgIcon fontSize={"small"} component={yandexIcon} viewBox="0 0 45 45" />
+        </IconButton>
+        <IconButton>
+          <SvgIcon fontSize={"small"} component={amozonIcon} viewBox="0 0 45 45" />
+        </IconButton>
+        <IconButton>
+          <SvgIcon fontSize={"small"} component={linktreeIcon} viewBox="0 0 45 45" />
+        </IconButton>
 
-      <Typography variant={"h6"}>Copyright {new Date().getUTCFullYear()} | All Rights Reserved</Typography>
-    </Box>
-  </div>;
+      </Box>
+
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Typography variant={"h6"}>GET IN TOUCH:{" "}
+          <a href="mailto:mail@htmlacademy.ru" className={"footer__mail"}>MAIL</a>
+        </Typography>
+        <Link href={Routes.PRIVACY_POLICY} className={"footer__privacy-policy"}>
+          <Typography variant={"h6"}>PRIVACY POLICY</Typography>
+        </Link>
+
+        <Typography variant={"h6"}>Copyright {new Date().getUTCFullYear()} | All Rights Reserved</Typography>
+      </Box>
+    </animated.div>
+  );
 };

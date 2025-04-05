@@ -1,24 +1,62 @@
 import { poemType } from "@/app/poems/poems";
-import { FC } from "react";
-import { Box, Typography } from "@mui/material";
+import React, { FC } from "react";
+import { Box, Button, IconButton, SvgIcon, Typography } from "@mui/material";
+import arrowLeft from "@/shared/icons/double-arrow-left.svg";
+import arrowRight from "@/shared/icons/double-arrow-right.svg";
+import menuArrow from "@/shared/icons/menuArrow.svg";
 
 interface PoemsActiveProps {
   poem: poemType;
+  changePoem: (value: number | null) => void;
+  poemLength: number;
+  poemIndex: number | null;
 }
 
-export const PoemsActive: FC<PoemsActiveProps> = ({ poem }) => {
+const colorSx = {
+  color: "#E5CFCF"
+};
+
+export const PoemsActive: FC<PoemsActiveProps> = ({ poem, changePoem, poemLength, poemIndex }) => {
   return (
-    <Box className={"poems__active"}
-         sx={{
-           // backgroundImage: `url(${poem.imageBack.src})`
-         }}
-    >
-      <Typography variant={"p0"} className={"poems__active-title"} color={"primary"}>{poem.title}</Typography>
-      <Typography
-        dangerouslySetInnerHTML={
-          { __html: poem.text }
+    <Box className={"poems__active"}>
+      <IconButton onClick={() => {
+        changePoem(null);
+      }}>
+        <SvgIcon component={menuArrow} viewBox="0 0 52 52" />
+      </IconButton>
+      <Box className={"poems__text-block"}>
+        <Typography variant={"p0"} className={"poems__active-title"} color={"primary"}>{poem.title}</Typography>
+        <Typography
+          dangerouslySetInnerHTML={
+            { __html: poem.text }
+          }
+          className={"poems__text"}
+          variant={"p2"}
+          sx={colorSx}
+        />
+      </Box>
+
+      <Box className={"poems__buttons"}>
+        {
+          poemIndex !== null && poemIndex !== 0 && (
+            <Button onClick={() => {
+              changePoem(poemIndex - 1);
+            }}>
+              <SvgIcon fontSize={"small"} component={arrowLeft} viewBox="0 0 44 44" sx={{ marginRight: "6px" }} />
+              <Typography variant={"h3"} sx={colorSx}>PREVIOUS</Typography>
+            </Button>
+          )
         }
-        variant={"p2"}
-      />
+        {
+          poemIndex !== null && poemIndex !== poemLength && (
+            <Button onClick={() => {
+              changePoem(poemIndex + 1);
+            }}>
+              <Typography variant={"h3"} sx={colorSx}>NEXT</Typography>
+              <SvgIcon fontSize={"small"} component={arrowRight} viewBox="0 0 44 44" sx={{ marginLeft: "6px" }} />
+            </Button>
+          )
+        }
+      </Box>
     </Box>);
 };

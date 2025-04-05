@@ -23,7 +23,8 @@ const nextConfig: NextConfig = {
   },
   sassOptions: {
     additionalData: `$--sm: 380;$--md: 640;$--lg: 1024;$--xl: 1920;$--content-main: #F1EDED;`
-  }
+  },
+  reactStrictMode: false
 
 
 };

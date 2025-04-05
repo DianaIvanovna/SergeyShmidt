@@ -6,7 +6,8 @@ import { Footer } from "@/components/Footer/Footer";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "@/theme/theme";
-import { Box } from "@mui/material";
+import { Box, GlobalStyles } from "@mui/material";
+import { globalStyling } from "@/theme/helpers/getGlobalStyling";
 
 
 const fontRegular = Hedvig_Letters_Serif({
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: Readonly<{
     <AppRouterCacheProvider options={{ key: "css" }}>
       <ThemeProvider theme={theme}>
         <Box className={"layout"}>
+          <GlobalStyles styles={globalStyling} />
           <Header />
           <Box className={"layout__content"}>
             {children}
