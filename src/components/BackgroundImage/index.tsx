@@ -7,10 +7,11 @@ interface BackgroundImageProps {
     media: string
   }[],
   mainImageSrc: string,
-  alt: string
+  alt: string,
+  className?: string
 }
 
-export const BackgroundImage: FC<BackgroundImageProps> = ({ sources, mainImageSrc, alt }) => {
+export const BackgroundImage: FC<BackgroundImageProps> = ({ sources, mainImageSrc, alt, className }) => {
 
   return (
     <picture className={"background-image"}>
@@ -18,7 +19,7 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({ sources, mainImageSr
         <source media={media} srcSet={srcSet} key={key} />
       ))}
 
-      <img src={mainImageSrc} alt={alt} style={{ backgroundColor: "black" }} />
+      <img src={mainImageSrc} alt={alt} style={{ backgroundColor: "black" }} className={className} />
     </picture>
   );
 };

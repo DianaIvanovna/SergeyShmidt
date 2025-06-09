@@ -8,6 +8,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "@/theme/theme";
 import { Box, GlobalStyles } from "@mui/material";
 import { globalStyling } from "@/theme/helpers/getGlobalStyling";
+import { PlayerStoreProvider } from "@/providers/player-store-provider";
 
 
 const fontRegular = Hedvig_Letters_Serif({
@@ -36,18 +37,21 @@ export default function RootLayout({ children }: Readonly<{
     // TODO подумай о языке
     <html lang="en">
     <body className={`${fontRegular.variable} ${fontBold.variable}`}>
-    <AppRouterCacheProvider options={{ key: "css" }}>
-      <ThemeProvider theme={theme}>
-        <Box className={"layout"}>
-          <GlobalStyles styles={globalStyling} />
-          <Header />
-          <Box className={"layout__content"}>
-            {children}
+    <PlayerStoreProvider>
+      <AppRouterCacheProvider options={{ key: "css" }}>
+        <ThemeProvider theme={theme}>
+          <Box className={"layout"}>
+            <GlobalStyles styles={globalStyling} />
+            <Header />
+            <Box className={"layout__content"}>
+              {children}
+            </Box>
+            <Footer />
           </Box>
-          <Footer />
-        </Box>
-      </ThemeProvider>
-    </AppRouterCacheProvider>
+        </ThemeProvider>
+      </AppRouterCacheProvider>
+    </PlayerStoreProvider>
+
     </body>
     </html>
   );

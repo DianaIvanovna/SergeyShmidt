@@ -1,0 +1,6 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M40 75C59.33 75 75 59.33 75 40C75 20.67 59.33 5 40 5C20.67 5 5 20.67 5 40C5 59.33 20.67 75 40 75Z"
+          class="stroke-main arrow-style"/>
+    <path d="M49.5332 24.1V55.9" class="stroke-main arrow-style"/>
+    <path d="M30.4668 55.9V24.1" class="stroke-main arrow-style"/>
+</svg>

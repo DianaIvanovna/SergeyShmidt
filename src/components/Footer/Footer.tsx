@@ -11,6 +11,7 @@ import Link from "next/link";
 import React from "react";
 import { Routes } from "@/shared/constants/Routes";
 import { animated, useSpring } from "@react-spring/web";
+import { usePathname } from "next/navigation";
 
 
 export const Footer = () => {
@@ -19,6 +20,9 @@ export const Footer = () => {
     to: { bottom: "0px", opacity: 1 },
     delay: 300
   });
+
+  const pathname = usePathname();
+  const isTrackPage = pathname === Routes.TRACKS;
 
 
   return (
@@ -29,37 +33,40 @@ export const Footer = () => {
         ...springs
       }}
     >
-      <Box className={"footer__link"}>
-        <IconButton>
-          <SvgIcon fontSize={"small"} component={spotifyIcon} viewBox="0 0 44 44" />
-        </IconButton>
-        <IconButton>
-          <SvgIcon fontSize={"small"} component={appleIcon} viewBox="0 0 45 45" />
-        </IconButton>
-        <IconButton>
-          <SvgIcon fontSize={"small"} component={youtubeIcon} viewBox="0 0 51 39" />
-        </IconButton>
-        <IconButton>
-          <SvgIcon fontSize={"small"} component={yandexIcon} viewBox="0 0 45 45" />
-        </IconButton>
-        <IconButton>
-          <SvgIcon fontSize={"small"} component={amozonIcon} viewBox="0 0 45 45" />
-        </IconButton>
-        <IconButton>
-          <SvgIcon fontSize={"small"} component={linktreeIcon} viewBox="0 0 45 45" />
-        </IconButton>
+      {
+        !isTrackPage && <Box className={"footer__link"}>
+          <IconButton>
+            <SvgIcon fontSize={"small"} component={spotifyIcon} viewBox="0 0 44 44" />
+          </IconButton>
+          <IconButton>
+            <SvgIcon fontSize={"small"} component={appleIcon} viewBox="0 0 45 45" />
+          </IconButton>
+          <IconButton>
+            <SvgIcon fontSize={"small"} component={youtubeIcon} viewBox="0 0 51 39" />
+          </IconButton>
+          <IconButton>
+            <SvgIcon fontSize={"small"} component={yandexIcon} viewBox="0 0 45 45" />
+          </IconButton>
+          <IconButton>
+            <SvgIcon fontSize={"small"} component={amozonIcon} viewBox="0 0 45 45" />
+          </IconButton>
+          <IconButton>
+            <SvgIcon fontSize={"small"} component={linktreeIcon} viewBox="0 0 45 45" />
+          </IconButton>
+        </Box>
+      }
 
-      </Box>
 
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography variant={"h6"}>GET IN TOUCH:{" "}
+      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+        <Typography variant={"p_24/11"}>GET IN TOUCH:{" "}
           <a href="mailto:mail@htmlacademy.ru" className={"footer__mail"}>MAIL</a>
         </Typography>
+
         <Link href={Routes.PRIVACY_POLICY} className={"footer__privacy-policy"}>
-          <Typography variant={"h6"}>PRIVACY POLICY</Typography>
+          <Typography variant={"p_16/9"}>PRIVACY POLICY</Typography>
         </Link>
 
-        <Typography variant={"h6"}>Copyright {new Date().getUTCFullYear()} | All Rights Reserved</Typography>
+        <Typography variant={"p_16/9"}>Copyright {new Date().getUTCFullYear()} | All Rights Reserved</Typography>
       </Box>
     </animated.div>
   );

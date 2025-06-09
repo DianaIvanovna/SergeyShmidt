@@ -1,0 +1,123 @@
+.tracks {
+  padding: 30px 0;
+  width: 100%;
+  flex-wrap: nowrap;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+
+  &__back {
+    object-position: left;
+  }
+
+  @media (min-width: $--md) {
+    padding: 40px 0;
+  }
+}
+
+.tracks-item {
+  margin-bottom: 15px;
+  @media (min-width: $--md) {
+    margin-bottom: 50px;
+  }
+}
+
+
+.audio-player {
+
+  &__black-box {
+    background: #1D1A1A;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    z-index: -1;
+  }
+
+  &__image {
+    //width: 130px;
+    //height: 130px;
+    width: 60px;
+    height: 60px;
+    @media (min-width: $--sm) {
+      width: 70px;
+      height: 70px;
+    }
+    @media (min-width: $--md) {
+      width: 110px;
+      height: 110px;
+    }
+    @media (min-width: $--lg) {
+      width: 130px;
+      height: 130px;
+    }
+  }
+
+  &__input-container {
+    margin-top: 30px;
+    margin-left: 18px;
+    @media (min-width: $--sm) {
+      margin-top: 35px;
+      margin-left: 35px;
+    }
+    @media (min-width: $--md) {
+      margin-top: 55px;
+      margin-left: 100px;
+    }
+    @media (min-width: $--lg) {
+      width: 65px;
+      //height: 124px;
+    }
+  }
+
+  &__text {
+    margin: 10px 0 5px;
+    justify-content: space-between
+  }
+
+  &__play-button.MuiButtonBase-root {
+    margin: 0 32px;
+  }
+
+  &__links {
+    justify-content: space-around;
+    margin-top: 35px;
+    //max-width: 360px;
+
+    a {
+      display: inline-block;
+      line-height: 0;
+    }
+
+    @media (min-width: $--md) {
+      max-width: 360px;
+      justify-content: space-between;
+    }
+  }
+
+  &__input {
+    -webkit-appearance: none;
+    height: 3px;
+    background: #E5CFCF;
+    border-radius: 5px;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      background: #F1EDED;
+      border: 2px solid #DC4343;
+      cursor: ew-resize;
+    }
+
+    &::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
+      box-shadow: none;
+      border: none;
+      background: transparent;
+    }
+
+
+  }
+}

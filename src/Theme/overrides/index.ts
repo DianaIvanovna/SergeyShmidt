@@ -3,6 +3,7 @@ import { Theme } from "@mui/material/styles";
 import { SvgIcon } from "@/theme/overrides/SvgIcon";
 import { IconButton } from "@/theme/overrides/iconButton/iconButton";
 import { CustomTypography } from "@/theme/overrides/Typography/CustomTypography";
+import { muiAccordion } from "@/theme/overrides/Accordion";
 
 // ** Overrides Imports
 
@@ -25,6 +26,7 @@ export const muiComponents = (theme: Theme) => {
   const svgIcon = SvgIcon(theme);
   const iconButton = IconButton();
   const typography = CustomTypography();
+  const accordion = muiAccordion();
   // const checkbox = MuiCheckbox(theme);
   // const radio = MuiRadio(theme);
   // const select = Select(theme);
@@ -33,6 +35,7 @@ export const muiComponents = (theme: Theme) => {
   return Object.assign(
     // button,
     // select,
+    accordion,
     typography,
     iconButton,
     // buttonGroup,

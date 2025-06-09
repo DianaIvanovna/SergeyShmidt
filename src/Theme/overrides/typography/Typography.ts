@@ -6,14 +6,24 @@ declare module "@mui/material" {
   interface TypographyPropsVariantOverrides {
     p0: true,
     p1: true;
-    p2: true
+    p2: true,
+    "p_24/11": true,
+    "p_20/12": true,
+    "p_16/9": true,
+    "p_16/12": true,
+    "p_13/11": true,
   }
 
   interface TypographyClasses {
 
     p0: string,
     p1: string;
-    p2: string
+    p2: string,
+    "p_24/11": string,
+    "p_20/12": string,
+    "p_16/9": string,
+    "p_16/12": string,
+    "p_13/11": string
   }
 }
 declare module "@mui/material/styles" {
@@ -23,6 +33,11 @@ declare module "@mui/material/styles" {
     p0: React.CSSProperties;
     p1: React.CSSProperties;
     p2: React.CSSProperties;
+    "p_24/11": React.CSSProperties;
+    "p_20/12": React.CSSProperties;
+    "p_16/9": React.CSSProperties;
+    "p_16/12": React.CSSProperties;
+    "p_13/11": React.CSSProperties;
   }
 
   interface TypographyVariants {
@@ -30,6 +45,11 @@ declare module "@mui/material/styles" {
     p0: React.CSSProperties;
     p1: React.CSSProperties;
     p2: React.CSSProperties;
+    "p_24/11": React.CSSProperties;
+    "p_20/12": React.CSSProperties;
+    "p_16/9": React.CSSProperties;
+    "p_16/12": React.CSSProperties;
+    "p_13/11": React.CSSProperties;
   }
 
 }
@@ -152,6 +172,67 @@ export const muiTypography = (theme: Theme): ThemeOptions["typography"] => {
 
       [theme.breakpoints.up("md")]: {
         fontSize: "32px"
+      }
+    },
+    "p_20/12": {
+      fontFamily: "var(--font-arsenal)",
+      fontWeight: 400,
+      fontSize: "12px",
+      lineHeight: "100%",
+      letterSpacing: "0.02em",
+      [theme.breakpoints.up("md")]: {
+        fontSize: "20px",
+        letterSpacing: "0.02em"
+      }
+    },
+    "p_24/11": {
+      fontFamily: "var(--font-hedvig-letters-serif)",
+      fontWeight: 400,
+      fontSize: "11px",
+      lineHeight: "100%",
+      letterSpacing: "0.06em",
+
+
+      [theme.breakpoints.up("md")]: {
+        fontSize: "24px"
+      }
+    },
+
+    "p_16/12": {
+      fontFamily: "var(--font-hedvig-letters-serif)",
+      fontWeight: 400,
+      fontSize: "12px",
+      lineHeight: "100%",
+      letterSpacing: "0.02em",
+
+
+      [theme.breakpoints.up("md")]: {
+        fontSize: "16px",
+        letterSpacing: "0.06em"
+      }
+    },
+    "p_16/9": {
+      fontFamily: "var(--font-hedvig-letters-serif)",
+      fontWeight: 400,
+      fontSize: "9px",
+      lineHeight: "100%",
+      letterSpacing: "0.06em",
+
+
+      [theme.breakpoints.up("md")]: {
+        fontSize: "16px"
+      }
+    },
+    "p_13/11": {
+      fontFamily: "var(--font-hedvig-letters-serif)",
+      fontWeight: 400,
+      fontSize: "11px",
+      lineHeight: "120%",
+      letterSpacing: "0.02em",
+
+
+      [theme.breakpoints.up("md")]: {
+        fontSize: "13px"
       }
     }
   };
