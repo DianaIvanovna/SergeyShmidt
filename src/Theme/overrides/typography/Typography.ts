@@ -8,6 +8,7 @@ declare module "@mui/material" {
     p1: true;
     p2: true,
     "p_24/11": true,
+    "p_24/13": true,
     "p_20/12": true,
     "p_16/9": true,
     "p_16/12": true,
@@ -20,6 +21,7 @@ declare module "@mui/material" {
     p1: string;
     p2: string,
     "p_24/11": string,
+    "p_24/13": string,
     "p_20/12": string,
     "p_16/9": string,
     "p_16/12": string,
@@ -34,6 +36,7 @@ declare module "@mui/material/styles" {
     p1: React.CSSProperties;
     p2: React.CSSProperties;
     "p_24/11": React.CSSProperties;
+    "p_24/13": React.CSSProperties;
     "p_20/12": React.CSSProperties;
     "p_16/9": React.CSSProperties;
     "p_16/12": React.CSSProperties;
@@ -46,6 +49,7 @@ declare module "@mui/material/styles" {
     p1: React.CSSProperties;
     p2: React.CSSProperties;
     "p_24/11": React.CSSProperties;
+    "p_24/13": React.CSSProperties;
     "p_20/12": React.CSSProperties;
     "p_16/9": React.CSSProperties;
     "p_16/12": React.CSSProperties;
@@ -194,6 +198,19 @@ export const muiTypography = (theme: Theme): ThemeOptions["typography"] => {
 
 
       [theme.breakpoints.up("md")]: {
+        fontSize: "24px"
+      }
+    },
+    "p_24/13": {
+      fontFamily: "var(--font-hedvig-letters-serif)",
+      fontWeight: 400,
+      fontSize: "13px",
+      lineHeight: "100%",
+      letterSpacing: "0.06em",
+
+
+      [theme.breakpoints.up("md")]: {
+        letterSpacing: "0.02em",
         fontSize: "24px"
       }
     },

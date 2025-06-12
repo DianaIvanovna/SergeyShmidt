@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "./style.scss";
+import styles from "./style.module.scss";
 
 interface BackgroundImageProps {
   sources: {
@@ -14,12 +14,12 @@ interface BackgroundImageProps {
 export const BackgroundImage: FC<BackgroundImageProps> = ({ sources, mainImageSrc, alt, className }) => {
 
   return (
-    <picture className={"background-image"}>
+    <picture className={styles["background-image"]}>
       {sources.map(({ media, srcSet }, key) => (
         <source media={media} srcSet={srcSet} key={key} />
       ))}
 
-      <img src={mainImageSrc} alt={alt} style={{ backgroundColor: "black" }} className={className} />
+      <img src={mainImageSrc} alt={alt} className={className} />
     </picture>
   );
 };

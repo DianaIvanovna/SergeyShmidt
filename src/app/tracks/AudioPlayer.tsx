@@ -220,7 +220,7 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
           ...style,
           display: "flex",
           flexDirection: "column",
-          border: "1px solid red",
+          // border: "1px solid blue",
           flexShrink: 0
         }}>
           <ReactHowler

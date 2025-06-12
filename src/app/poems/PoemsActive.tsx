@@ -19,11 +19,14 @@ const colorSx = {
 export const PoemsActive: FC<PoemsActiveProps> = ({ poem, changePoem, poemLength, poemIndex }) => {
   return (
     <Box className={"poems__active"}>
-      <IconButton onClick={() => {
-        changePoem(null);
-      }}>
-        <SvgIcon component={menuArrow} viewBox="0 0 52 52" />
-      </IconButton>
+      <Box className={"poems__back-icon"}>
+        <IconButton onClick={() => {
+          changePoem(null);
+        }}>
+          <SvgIcon component={menuArrow} viewBox="0 0 52 52" />
+        </IconButton>
+      </Box>
+
       <Box className={"poems__text-block"}>
         <Typography variant={"p0"} className={"poems__active-title"} color={"primary"}>{poem.title}</Typography>
         <Typography
@@ -43,7 +46,7 @@ export const PoemsActive: FC<PoemsActiveProps> = ({ poem, changePoem, poemLength
               changePoem(poemIndex - 1);
             }}>
               <SvgIcon fontSize={"small"} component={arrowLeft} viewBox="0 0 44 44" sx={{ marginRight: "6px" }} />
-              <Typography variant={"h3"} sx={colorSx}>PREVIOUS</Typography>
+              <Typography variant={"p_24/13"} sx={colorSx}>PREVIOUS</Typography>
             </Button>
           )
         }
@@ -52,7 +55,7 @@ export const PoemsActive: FC<PoemsActiveProps> = ({ poem, changePoem, poemLength
             <Button onClick={() => {
               changePoem(poemIndex + 1);
             }}>
-              <Typography variant={"h3"} sx={colorSx}>NEXT</Typography>
+              <Typography variant={"p_24/13"} sx={colorSx}>NEXT</Typography>
               <SvgIcon fontSize={"small"} component={arrowRight} viewBox="0 0 44 44" sx={{ marginLeft: "6px" }} />
             </Button>
           )

@@ -3,7 +3,7 @@ import React, { FC, PropsWithChildren } from "react";
 import CloseIcon from "@/shared/icons/close.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Routes } from "@/shared/constants/Routes";
+import { RoutesTranslation } from "@/shared/constants/Routes";
 import "./MenuModal.scss";
 
 interface MenuModalProp {
@@ -23,7 +23,6 @@ export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
   return (
     <Modal
       open={open}
-
       slotProps={{
         backdrop: {
           sx: {
@@ -33,9 +32,8 @@ export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
         }
       }}
     >
-      <Box
-        sx={{ display: "flex", alignItems: "center", justifyContent: "center", position: "relative", height: "100%" }}>
-        <IconButton onClick={onClose} className={"close-icon"}>
+      <Box className={"layout menu-modal"}>
+        <IconButton onClick={onClose} className={"menu-modal__close"}>
           <SvgIcon component={CloseIcon} viewBox="0 0 44 44" />
         </IconButton>
 
@@ -49,10 +47,10 @@ export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
 
         }}>
           {
-            Object.values(Routes).map((item, key) => (
-              <LinkWrapper key={key}>
-                <Link href={item} onClick={onClose}>
-                  <Typography variant={"h1"} color={item === pathname ? "primary" : ""}>{item}</Typography>
+            Object.entries(RoutesTranslation).map(([link, name]) => (
+              <LinkWrapper key={link}>
+                <Link href={link} onClick={onClose}>
+                  <Typography variant={"h1"} color={link === pathname ? "primary" : ""}>{name}</Typography>
                 </Link>
               </LinkWrapper>
             ))

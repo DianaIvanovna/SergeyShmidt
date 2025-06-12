@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { songsArr } from "@/app/tracks/constants";
 import { AudioItem } from "@/app/tracks/AudioItem";

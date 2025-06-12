@@ -4,7 +4,7 @@ export const parseTime = (decimalSeconds: string, includeMilliseconds = true) =>
   const hours = Math.floor(newDecimalSeconds / 3600);
   const minutes = Math.floor((newDecimalSeconds % 3600) / 60);
   const seconds = Math.floor(newDecimalSeconds % 60);
-  const milliseconds = Math.floor(newDecimalSeconds * 1000) % 1000;
+  // const milliseconds = Math.floor(newDecimalSeconds * 1000) % 1000;
   if (includeMilliseconds) {
     return [
       // hours.toString().padStart(2, "0"),
