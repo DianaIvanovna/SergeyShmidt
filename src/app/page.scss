@@ -66,3 +66,12 @@ body {
   }
 }
 
+.header-404.MuiTypography-root {
+  font-size: 128px;
+  letter-spacing: 0.22em;
+  line-height: 100%;
+  margin-bottom: 50px;
+  @media (min-width: $--md) {
+    font-size: 240px;
+  }
+}
