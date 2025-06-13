@@ -22,7 +22,8 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1696px;
+  //max-width: 1696px;
+  max-width: 1920px;
   padding: 20px 18px;
   overflow: hidden;
   box-sizing: border-box;
@@ -54,12 +55,22 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  overflow: hidden;
 
   &__title.MuiTypography-root {
     max-width: 344px;
     text-align: right;
 
+    line-height: 150%;
+    letter-spacing: .23em;
+    text-decoration: underline;
+
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+
+
     margin-bottom: 89px;
+    display: inline-block;
     @media (min-width: $--lg) {
       margin-bottom: 60px;
     }

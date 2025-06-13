@@ -19,7 +19,7 @@ export const Menu = () => {
   return (
     <>
       <IconButton onClick={onClick}>
-        <SvgIcon component={MenuIcon2} viewBox="0 0 58 58" />
+        <SvgIcon component={MenuIcon2} viewBox="0 0 58 58" className={"menu-modal__icon"} />
       </IconButton>
       <MenuModal open={open} onClose={onClose} />
     </>

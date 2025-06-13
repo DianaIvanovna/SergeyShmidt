@@ -319,7 +319,6 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
                 href={this.state.activeSong.youtube}
                 target="_blank"
                 rel="noreferrer"
-
               >
                 <SvgIcon fontSize={"small"} component={youtubeIcon} viewBox="0 0 51 39" />
               </Link>
