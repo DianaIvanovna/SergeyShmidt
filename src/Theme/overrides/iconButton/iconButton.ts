@@ -9,6 +9,7 @@ export const IconButton = (): OverrideComponentType<"MuiIconButton"> => {
       styleOverrides: {
         root: () => ({
           padding: 0,
+          borderRadius: "5px",
           "&:hover": {
             backgroundColor: "transparent"
           },

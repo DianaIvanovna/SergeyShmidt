@@ -8,10 +8,12 @@ import nextIcon from "@/shared/icons/next.svg";
 import playIcon from "@/shared/icons/play.svg";
 import { parseTime } from "@/app/tracks/helpers";
 import Image from "next/image";
-import spotifyIcon from "@/shared/icons/spotify.svg";
-import youtubeIcon from "@/shared/icons/youtube.svg";
+import spotifyIcon from "@/shared/icons/spotifyFill.svg";
+import youtubeIcon from "@/shared/icons/youtubeFill.svg";
+import yandexIcon from "@/shared/icons/yandexFill.svg";
+import appleIcon from "@/shared/icons/appleFill.svg";
+
 import Link from "next/link";
-import appleIcon from "@/shared/icons/apple.svg";
 import { songsArr } from "@/app/tracks/constants";
 import { usePlayerContext } from "@/providers/player-store-provider";
 import { animated, Spring } from "@react-spring/web";
@@ -95,7 +97,9 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
     this.unsubscribe = this.props.context.subscribe((state) => {
       this.setState({
         playing: state.isPlay,
-        activeSong: state.activeSong
+        activeSong: state.activeSong,
+        blackBoxTop: this.refInput.current ? `${this.refInput.current.offsetTop + (this.refInput.current.offsetHeight / 2)}px` : "100vh"
+
       });
     });
   }
@@ -205,6 +209,10 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
 
     const indexSong = songsArr.findIndex((item) => item.id === this.state.activeSong?.id);
 
+
+    if (!this.state.activeSong) {
+      return;
+    }
 
     return (
       <Spring
@@ -320,7 +328,17 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
                 target="_blank"
                 rel="noreferrer"
               >
-                <SvgIcon fontSize={"small"} component={youtubeIcon} viewBox="0 0 51 39" />
+                <SvgIcon fontSize={"small"} component={youtubeIcon} viewBox="0 0 45 45" />
+              </Link>
+            }
+
+            {
+              this.state.activeSong?.yandex && <Link
+                href={this.state.activeSong.yandex}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <SvgIcon fontSize={"small"} component={yandexIcon} viewBox="0 0 45 45" />
               </Link>
             }
 

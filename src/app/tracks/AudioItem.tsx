@@ -76,7 +76,11 @@ export const AudioItem: FC<AudioItemProps> = ({ song }) => {
                       justifyContent: "space-between",
                       alignItems: "flex-start",
                       gap: "10px",
-                      marginBottom: "16px"
+                      marginBottom: "16px",
+
+                      "& a": {
+                        textDecoration: "underline"
+                      }
                     }}
                     key={key}
                   >

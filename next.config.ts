@@ -83,7 +83,7 @@ const nextConfig: NextConfig = {
     return config;
   },
   sassOptions: {
-    additionalData: `$--sm: 380px;$--md: 640px;$--lg: 1024px;$--xl: 1920px;$--content-main: #F1EDED;`
+    additionalData: `$--sm: 380px;$--md: 640px;$--lg: 1200px; $--lg-2: 1024px;$--xl: 1920px;$--content-main: #F1EDED;`
   },
   reactStrictMode: false
 };

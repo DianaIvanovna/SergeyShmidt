@@ -12,7 +12,8 @@ interface MenuModalProp {
 }
 
 const LinkWrapper: FC<PropsWithChildren> = ({ children }) => {
-  return <Box sx={{ padding: "10px", textTransform: "uppercase", textAlign: "center" }}>
+  return <Box sx={{ padding: "10px", textTransform: "uppercase", textAlign: "center", marginBottom: "35px" }}
+              className={"link-wrapper"}>
     {children}
   </Box>;
 };
@@ -27,25 +28,31 @@ export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
         backdrop: {
           sx: {
             backgroundColor: "transparent",
-            backdropFilter: "blur(5px)"
+            backdropFilter: "blur(10px)"
           }
         }
       }}
     >
       <Box className={"layout menu-modal"}>
-        <IconButton onClick={onClose} className={"menu-modal__close"}>
-          <SvgIcon component={CloseIcon} viewBox="0 0 44 44" />
+        <IconButton onClick={onClose} className={"menu-modal__close "}>
+          <SvgIcon component={CloseIcon} viewBox="0 0 44 44" className={"menu-modal__icon"} />
         </IconButton>
 
 
-        <Box sx={{
-          width: "392px",
-          border: "1px solid #EAE7E7",
-          borderRadius: "10px",
-          padding: "127px 102px",
-          boxSizing: "border-box"
+        <Box
 
-        }}>
+          className={"menu-modal__menu"}
+          sx={{
+            maxWidth: "392px",
+            width: "70%",
+            minWidth: "192px",
+            border: "1px solid #EAE7E7",
+            borderRadius: "10px",
+
+            boxSizing: "border-box"
+
+
+          }}>
           {
             Object.entries(RoutesTranslation).map(([link, name]) => (
               <LinkWrapper key={link}>

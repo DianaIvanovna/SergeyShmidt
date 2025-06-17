@@ -3,18 +3,15 @@ import React from "react";
 import { songsArr } from "@/app/tracks/constants";
 import { AudioItem } from "@/app/tracks/AudioItem";
 import { Grid } from "@mui/material";
-import { useHasScroll } from "@/shared/hooks/useHasScroll";
 
 export const AudioList = () => {
-  const { ref, hasScroll } = useHasScroll<HTMLDivElement>();
   return (
     <Grid
       container
       flexDirection={"column"}
-      ref={ref}
       sx={{
         flexGrow: 2,
-        justifyContent: hasScroll ? "flex-start" : "center",
+        margin: "auto 0",
         overflowY: "auto",
         flexWrap: "nowrap",
         direction: "rtl",
@@ -23,14 +20,23 @@ export const AudioList = () => {
         }
       }}
     >
-      {
-        songsArr.map((song) => (
-          <AudioItem
-            song={song}
-            key={song.title}
-          />
-        ))
-      }
+      <Grid
+        container
+        flexDirection={"column"}
+
+        sx={{
+          margin: "auto 0"
+        }}
+      >
+        {
+          songsArr.map((song) => (
+            <AudioItem
+              song={song}
+              key={song.title}
+            />
+          ))
+        }
+      </Grid>
     </Grid>
   );
 };

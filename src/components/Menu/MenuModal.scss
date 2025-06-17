@@ -1,4 +1,11 @@
 
+.menu-modal__icon.MuiSvgIcon-root {
+  font-size: 44px;
+  @media (min-width: 1024px) {
+    font-size: 58px;
+  }
+}
+
 .menu-modal {
   display: flex;
   align-items: center;
@@ -6,12 +13,20 @@
   position: relative;
   height: 100%;
 
-  &__icon.MuiSvgIcon-root {
-    font-size: 44px;
-    @media (min-width: 1024px) {
-      font-size: 58px;
+  &__menu {
+    padding: 62px 30px;
+    @media (min-width: $--md) {
+      padding: 62px 40px;
+    }
+    @media (min-width: $--lg) {
+      padding: 127px 40px
+    }
+
+    & .link-wrapper:last-of-type {
+      margin-bottom: 0
     }
   }
+
 
   .menu-modal__close.MuiButtonBase-root {
     position: absolute;

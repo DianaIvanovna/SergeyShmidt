@@ -7,11 +7,11 @@ export enum Routes {
   PRIVACY_POLICY = "/privacy-policy",
 }
 
-export const RoutesTranslation: Record<Routes, string> = {
+export const RoutesTranslation: Record<string, string> = {
   [Routes.HOME]: "HOME",
   [Routes.TRACKS]: "TRACKS",
   [Routes.POEMS]: "POEMS",
-  [Routes.WEBSITE]: "WEBSITE",
-  [Routes.NOT_FOUND]: "404",
-  [Routes.PRIVACY_POLICY]: "privacy-policy"
+  [Routes.WEBSITE]: "WEBSITE"
+  // [Routes.NOT_FOUND]: "404",
+  // [Routes.PRIVACY_POLICY]: "privacy-policy"
 };

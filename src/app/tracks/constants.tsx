@@ -7,15 +7,15 @@ export const songsArr = [
   {
     id: 1,
     title: "ТЕМНОТА",
-    audioSrc: "PO_GORODU.wav",
+    audioSrc: "temnota.wav",
     image: darkness,
     about: [
       {
-        title: "Lyrics, Music, Arrangement",
-        value: "Sergey Shmidt"
+        title: "Release",
+        value: "2024/06/28"
       },
       {
-        title: "Vocals, Guitars, Bass",
+        title: "Lyrics, Music, Arrangement, Vocals, Guitars, Bass",
         value: "Sergey Shmidt"
       },
       {
@@ -24,13 +24,13 @@ export const songsArr = [
       },
       {
         title: "Recording, Mixing, Mastering",
-        value: "Kevin Nietsch: KN-Musikproduktion"
+        value: `Kevin Nietsch <a  class="songs-page__link" href="https://www.kn-musikproduktion.de/" target="_blank" rel="noreferrer" >(KN-Musikproduktion)</a>`
       }
     ],
-    spotify: "https://open.spotify.com/album/3aYe9WeszUGbFqw3bo7Cx5",
-    appleMusic: "https://music.apple.com/us/album/по-городу-single/1624085601",
-    youtube:
-      "https://music.youtube.com/playlist?list=OLAK5uy_lfJ1EusWQOwm17DbfSyxgzZ2kDi-44F68",
+
+    spotify: "https://open.spotify.com/album/6ZqKOmtKcsp5QpYbKwWsRO",
+    appleMusic: "https://music.apple.com/us/album/темнота-single/1754069648",
+    yandex: "https://music.yandex.ru/album/32228930",
     disabled: false
   },
 
@@ -63,7 +63,6 @@ export const songsArr = [
       >SCB-Music</a>`
       }
     ],
-
     spotify: "https://open.spotify.com/album/3ySiYyEghhNxYjJwfTMZJx",
     appleMusic: "https://music.apple.com/us/album/fate-single/1671242220",
     youtube:
