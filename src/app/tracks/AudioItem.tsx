@@ -50,7 +50,7 @@ export const AudioItem: FC<AudioItemProps> = ({ song }) => {
       </Grid>
 
       <Grid sx={{ maxWidth: "450px" }}>
-        <Typography variant={"p0"} sx={{ fontWeight: 400 }}>{song.title}</Typography>
+        <Typography variant={"p_48/32"} sx={{ fontWeight: 400 }}>{song.title}</Typography>
         <Accordion
           expanded={song.id === openAboutSongId}
           onChange={() => {

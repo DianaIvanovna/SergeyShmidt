@@ -5,28 +5,30 @@ import back2 from "@/shared/images/back1024.jpg";
 import { Grid, Typography } from "@mui/material";
 import { PersonCard } from "./PersonCard";
 import React from "react";
+import Link from "next/link";
+import { Routes } from "@/shared/constants/Routes";
 
 const persons = [
   {
     work: "Web-Design",
     name: "MAXIM PALVAL",
-    link: "https://yandex.ru/search/?text=не+забудь+поменять+ссылки&clid=2270455&banerid=6301000000%3A63c55f88e393b0548bf5b8f4&win=577&lr=120420"
+    link: "https://t.me/mopsermax"
   },
 
   {
     work: "Web-Development",
     name: "DIANA GARBUZ",
-    link: "https://yandex.ru/search/?text=не+забудь+поменять+ссылки&clid=2270455&banerid=6301000000%3A63c55f88e393b0548bf5b8f4&win=577&lr=120420"
+    link: "https://t.me/gdi_99"
   },
   {
     work: "Photo and edit",
     name: "EKATERINA ZEHNER",
-    link: "https://yandex.ru/search/?text=не+забудь+поменять+ссылки&clid=2270455&banerid=6301000000%3A63c55f88e393b0548bf5b8f4&win=577&lr=120420"
+    link: "https://www.ekaterinazehner.com/"
   },
   {
     work: "Poems artwork",
     name: "MARIE BAKANOVA",
-    link: "https://yandex.ru/search/?text=не+забудь+поменять+ссылки&clid=2270455&banerid=6301000000%3A63c55f88e393b0548bf5b8f4&win=577&lr=120420"
+    link: "https://vk.com/mariel_vision"
   }];
 
 export default function Website() {
@@ -50,7 +52,10 @@ export default function Website() {
           <PersonCard key={index} {...person} />
         ))
       }
-      <Typography variant={"p_24/13"}>PRIVATE WEBSITE</Typography>
+
+      <Link href={Routes.PRIVACY_POLICY}>
+        <Typography variant={"p_24/13"} className={"person-card__link"}>PRIVATE WEBSITE</Typography>
+      </Link>
 
 
       <BackgroundImage mainImageSrc={back3.src} alt={"background image"} sources={sources} />

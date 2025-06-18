@@ -21,6 +21,7 @@ export default function PrivacyPolicy() {
   return (
     <Box sx={{ flexGrow: 2, display: "flex" }}>
       <section className="privacy_policy">
+        
         <Typography className="privacy_policy__title" mb={3}>Privacy Policy</Typography>
         <Typography className="privacy_policy__title" mb={3}>
           1. Datenschutz auf einen Blick

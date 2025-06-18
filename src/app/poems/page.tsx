@@ -1,6 +1,7 @@
 import { BackgroundImage } from "@/components/BackgroundImage";
 import back3 from "@/shared/images/back480.jpg";
-import back1 from "@/shared/images/back1920.jpg";
+// import back1 from "@/shared/images/back1920.jpg";
+import back1 from "@/shared/images/DSC01460-2 3.png";
 import back2 from "@/shared/images/back1024.jpg";
 import { useMemo } from "react";
 import "./poems.scss";
@@ -28,7 +29,7 @@ export default function Poems() {
       <WindowOnLoad>
         <PoemsContent />
       </WindowOnLoad>
-      
+
       <BackgroundImage mainImageSrc={back3.src} alt={"background image"} sources={sources} />
     </Box>
   );

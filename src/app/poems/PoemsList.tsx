@@ -31,12 +31,11 @@ export const PoemsList: FC<PoemsListProps> = ({ changePoem, poemIndex }) => {
             className="poems__item"
             onClick={() => poemClick(index)}
             sx={{
-              marginLeft: "20px",
               backgroundImage: `url(${item.image.src})`,
               border: (theme) => poemIndex === index ? `1px solid ${theme.palette.primary.main}` : ""
             }}
           >
-            <Typography variant={"p1"}>{item.title}</Typography>
+            <Typography variant={"p_36/32"}>{item.title}</Typography>
           </Box>
         ))
       }

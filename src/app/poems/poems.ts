@@ -1,9 +1,12 @@
 import poem1 from "@/shared/images/poem1.png";
 import poem2 from "@/shared/images/poem2.png";
 import poem3 from "@/shared/images/poem3.png";
-import poemBack1 from "@/shared/images/poemBack1.png";
-import poemBack2 from "@/shared/images/poemBack2.png";
-import poemBack3 from "@/shared/images/poemBack3.png";
+import poemBack1Big from "@/shared/images/poem1_back_1024.png";
+import poemBack1Small from "@/shared/images/poem1_back_480.png";
+import poemBack2Big from "@/shared/images/poem2_back_1024.png";
+import poemBack2Small from "@/shared/images/poem2_back_480.png";
+import poemBack3Big from "@/shared/images/poem3_back_1024.png";
+import poemBack3Small from "@/shared/images/poem3_back_480.png";
 
 export type poemType = typeof poemsArr[number];
 
@@ -35,7 +38,8 @@ export const poemsArr = [
 `,
     url: "U_MENYA_BUDET_DOLGAYA_NOCH",
     image: poem1,
-    imageBack: poemBack1
+    imageBackBig: poemBack1Big.src,
+    imageBack: poemBack1Small.src
 
   },
   {
@@ -83,7 +87,8 @@ export const poemsArr = [
     `,
     url: "o_vdokhnovenii",
     image: poem2,
-    imageBack: poemBack2
+    imageBackBig: poemBack2Big.src,
+    imageBack: poemBack2Small.src
   },
   {
     title: "Сон",
@@ -121,6 +126,7 @@ export const poemsArr = [
 `,
     url: "SON",
     image: poem3,
-    imageBack: poemBack3
+    imageBackBig: poemBack3Big.src,
+    imageBack: poemBack3Small.src
   }
 ];

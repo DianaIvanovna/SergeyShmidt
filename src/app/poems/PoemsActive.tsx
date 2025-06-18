@@ -28,15 +28,21 @@ export const PoemsActive: FC<PoemsActiveProps> = ({ poem, changePoem, poemLength
       </Box>
 
       <Box className={"poems__text-block"}>
-        <Typography variant={"p0"} className={"poems__active-title"} color={"primary"}>{poem.title}</Typography>
+        <div className={"poems__back-image"} style={{ backgroundImage: `url(${poem.imageBack})` }} />
+        <Typography variant={"p_48/32"} className={"poems__active-title"} color={"primary"}>{poem.title}</Typography>
         <Typography
           dangerouslySetInnerHTML={
             { __html: poem.text }
           }
           className={"poems__text"}
-          variant={"p2"}
+          variant={"p_32/17"}
           sx={colorSx}
         />
+        {/*<picture className={"poems__back-image"}>*/}
+        {/*  <source media="(min-width: 700px)" srcSet={poem.imageBackBig} />*/}
+        {/*  <img src={poem.imageBack} alt={"alt"} />*/}
+        {/*</picture>*/}
+
       </Box>
 
       <Box className={"poems__buttons"}>
@@ -54,7 +60,9 @@ export const PoemsActive: FC<PoemsActiveProps> = ({ poem, changePoem, poemLength
           poemIndex !== null && poemIndex !== poemLength && (
             <Button onClick={() => {
               changePoem(poemIndex + 1);
-            }}>
+            }}
+                    className={"poems__button-next"}
+            >
               <Typography variant={"p_24/13"} sx={colorSx}>NEXT</Typography>
               <SvgIcon fontSize={"small"} component={arrowRight} viewBox="0 0 44 44" sx={{ marginLeft: "6px" }} />
             </Button>
