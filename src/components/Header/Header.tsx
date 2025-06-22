@@ -4,6 +4,8 @@ import React from "react";
 import { Menu } from "@/components/Menu";
 import { Typography } from "@mui/material";
 import { animated, useSpring } from "@react-spring/web";
+import { Routes } from "@/shared/constants/Routes";
+import Link from "next/link";
 
 
 export const Header = () => {
@@ -22,8 +24,12 @@ export const Header = () => {
       }}
     >
       <Menu />
-      <Typography variant={"h2"}>SERGEY
-        <br />SHMIDT</Typography>
+      <Link href={Routes.HOME}>
+        <Typography variant={"h2"}>SERGEY
+          <br />SHMIDT(v6)</Typography>
+      </Link>
+
+
     </animated.div>
   );
 };

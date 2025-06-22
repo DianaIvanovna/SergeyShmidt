@@ -35,7 +35,7 @@ export const PoemsList: FC<PoemsListProps> = ({ changePoem, poemIndex }) => {
               border: (theme) => poemIndex === index ? `1px solid ${theme.palette.primary.main}` : ""
             }}
           >
-            <Typography variant={"p_36/32"}>{item.title}</Typography>
+            <Typography variant={"p_36/24"}>{item.title}</Typography>
           </Box>
         ))
       }

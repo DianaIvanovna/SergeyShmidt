@@ -4,6 +4,7 @@ import ReactHowler from "react-howler";
 import raf from "raf";
 import { Box, debounce, Grid, IconButton, SvgIcon, Typography } from "@mui/material";
 import pauseIcon from "@/shared/icons/pause.svg";
+import loadingIcon from "@/shared/icons/loading.svg";
 import nextIcon from "@/shared/icons/next.svg";
 import playIcon from "@/shared/icons/play.svg";
 import { parseTime } from "@/app/tracks/helpers";
@@ -99,8 +100,18 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
         playing: state.isPlay,
         activeSong: state.activeSong,
         blackBoxTop: this.refInput.current ? `${this.refInput.current.offsetTop + (this.refInput.current.offsetHeight / 2)}px` : "100vh"
-
       });
+
+      if (!this.refInput.current) {
+        setTimeout(() => {
+          if (this.refInput.current) {
+            this.setState({
+              blackBoxTop: this.refInput.current ? `${this.refInput.current.offsetTop + (this.refInput.current.offsetHeight / 2)}px` : "100vh"
+            });
+
+          }
+        }, 100);
+      }
     });
   }
 
@@ -210,11 +221,7 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
     const indexSong = songsArr.findIndex((item) => item.id === this.state.activeSong?.id);
 
 
-    if (!this.state.activeSong) {
-      return;
-    }
-
-    return (
+    const player = (
       <Spring
         from={{ opacity: 0, top: "-100px", pointerEvents: "none" }}
         to={
@@ -231,6 +238,8 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
           // border: "1px solid blue",
           flexShrink: 0
         }}>
+
+
           <ReactHowler
             src={this.state.activeSong?.audioSrc ?? songsArr[0].audioSrc}
             playing={this.state.playing}
@@ -284,10 +293,15 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
                   <SvgIcon fontSize={"medium"} component={nextIcon} viewBox="0 0 50 50"
                            sx={{ transform: "rotate(180deg)" }} />
                 </IconButton>
-                <IconButton className="audio-player__play-button" onClick={this.handleToggle}>
+                <IconButton className="audio-player__play-button" onClick={this.handleToggle}
+                            disabled={!this.state.loaded}>
+
+
                   {
-                    this.state.playing ? <SvgIcon fontSize={"large"} component={pauseIcon} viewBox="0 0 80 80" /> :
-                      <SvgIcon fontSize={"large"} component={playIcon} viewBox="0 0 44 44" />
+                    !this.state.loaded ?
+                      <SvgIcon fontSize={"large"} component={loadingIcon} viewBox="0 0 80 80" className={"spinner"} />
+                      : this.state.playing ? <SvgIcon fontSize={"large"} component={pauseIcon} viewBox="0 0 80 80" /> :
+                        <SvgIcon fontSize={"large"} component={playIcon} viewBox="0 0 44 44" />
                   }
                 </IconButton>
                 <IconButton disabled={indexSong === (songsArr.length - 1)} onClick={() => {
@@ -347,6 +361,23 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
 
         </animated.div>}
       </Spring>
+    );
+
+    return (
+      <>
+        {/* Скрытые плееры для предзагрузки всех песен */}
+        {songsArr.map(song => (
+          <ReactHowler
+            key={`preload-${song.id}`}
+            src={song.audioSrc}
+            preload={true}
+            volume={0} // Делаем не слышимыми
+            playing={false}
+          />
+        ))}
+
+        {this.state.activeSong && player}
+      </>
     );
   }
 }

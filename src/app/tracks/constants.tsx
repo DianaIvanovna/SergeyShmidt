@@ -1,6 +1,6 @@
-import darkness from "@/shared/images/darkness.png";
-import FateImage from "@/shared/images/FATE.png";
-import poGorodyImage from "@/shared/images/PO_GORODU.png";
+import darkness from "@/shared/images/darkness.jpg";
+import FateImage from "@/shared/images/FATE.jpg";
+import poGorodyImage from "@/shared/images/PO_GORODU.jpg";
 
 
 export const songsArr = [
@@ -24,7 +24,7 @@ export const songsArr = [
       },
       {
         title: "Recording, Mixing, Mastering",
-        value: `Kevin Nietsch <a  class="songs-page__link" href="https://www.kn-musikproduktion.de/" target="_blank" rel="noreferrer" >(KN-Musikproduktion)</a>`
+        value: `Kevin Nietsch</br><a  class="songs-page__link" href="https://www.kn-musikproduktion.de/" target="_blank" rel="noreferrer" >(KN-Musikproduktion)</a>`
       }
     ],
 
@@ -54,7 +54,7 @@ export const songsArr = [
       },
       {
         title: "Recording, Mixing, Mastering",
-        value: `Steffen Burkhardt: <a
+        value: `Steffen Burkhardt</br><a
         class="songs-page__link"
         href="https://www.scb-music.de/"
         alt="scb-music"
@@ -89,7 +89,7 @@ export const songsArr = [
       },
       {
         title: "Recording, Mixing, Mastering",
-        value: `Steffen Burkhardt: <a
+        value: `Steffen Burkhardt</br><a
         class="songs-page__link"
         href="https://www.scb-music.de/"
         alt="scb-music"

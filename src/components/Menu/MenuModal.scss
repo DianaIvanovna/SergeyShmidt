@@ -6,6 +6,19 @@
   }
 }
 
+.link-wrapper {
+  padding: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 35px;
+
+  &--active {
+    .MuiTypography-root {
+      color: #DC4343
+    }
+  }
+}
+
 .menu-modal {
   display: flex;
   align-items: center;
@@ -43,3 +56,4 @@
     }
   }
 }
+

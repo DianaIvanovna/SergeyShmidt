@@ -1,7 +1,6 @@
 import { BackgroundImage } from "@/components/BackgroundImage";
 import back3 from "@/shared/images/back480.jpg";
-// import back1 from "@/shared/images/back1920.jpg";
-import back1 from "@/shared/images/DSC01460-2 3.png";
+import back1 from "@/shared/images/back1920.jpg";
 import back2 from "@/shared/images/back1024.jpg";
 import { useMemo } from "react";
 import "./poems.scss";

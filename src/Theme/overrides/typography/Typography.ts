@@ -5,7 +5,7 @@ import { Theme, ThemeOptions } from "@mui/material/styles";
 declare module "@mui/material" {
   interface TypographyPropsVariantOverrides {
     "p_48/32": true,
-    "p_36/32": true,
+    "p_36/24": true,
     "p_32/20": true,
     "p_32/17": true,
     "p_24/11": true,
@@ -19,7 +19,7 @@ declare module "@mui/material" {
 
   interface TypographyClasses {
     "p_48/32": string,
-    "p_36/32": string,
+    "p_36/24": string,
     "p_32/20": string,
     "p_32/17": string,
     "p_24/11": string,
@@ -35,7 +35,7 @@ declare module "@mui/material/styles" {
   // allow configuration using `createTheme`
   interface TypographyVariantsOptions {
     "p_48/32": React.CSSProperties;
-    "p_36/32": React.CSSProperties;
+    "p_36/24": React.CSSProperties;
     "p_32/20": React.CSSProperties;
     "p_32/17": React.CSSProperties;
     "p_24/11": React.CSSProperties;
@@ -49,7 +49,7 @@ declare module "@mui/material/styles" {
 
   interface TypographyVariants {
     "p_48/32": React.CSSProperties;
-    "p_36/32": React.CSSProperties;
+    "p_36/24": React.CSSProperties;
     "p_32/20": React.CSSProperties;
     "p_32/17": React.CSSProperties;
     "p_24/11": React.CSSProperties;
@@ -102,10 +102,10 @@ export const muiTypography = (theme: Theme): ThemeOptions["typography"] => {
         fontSize: "48px"
       }
     },
-    "p_36/32": {
+    "p_36/24": {
       fontFamily: "var(--font-arsenal)",
       fontWeight: 400,
-      fontSize: "32px",
+      fontSize: "24px",
       lineHeight: "100%",
       letterSpacing: "0.08em",
       [theme.breakpoints.up("md")]: {

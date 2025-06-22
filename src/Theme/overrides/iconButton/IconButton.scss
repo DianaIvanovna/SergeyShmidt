@@ -126,4 +126,10 @@ $--icon-color-close-active: #454545;
     }
   }
 
+  &.Mui-disabled {
+    & [ class *= "stroke-main" ] {
+      stroke: #C9C8C899;
+    }
+  }
+
 }

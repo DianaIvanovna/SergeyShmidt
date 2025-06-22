@@ -1,5 +1,5 @@
 import { Box, IconButton, Modal, SvgIcon, Typography } from "@mui/material";
-import React, { FC, PropsWithChildren } from "react";
+import React, { FC } from "react";
 import CloseIcon from "@/shared/icons/close.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -11,12 +11,12 @@ interface MenuModalProp {
   onClose: () => void
 }
 
-const LinkWrapper: FC<PropsWithChildren> = ({ children }) => {
-  return <Box sx={{ padding: "10px", textTransform: "uppercase", textAlign: "center", marginBottom: "35px" }}
-              className={"link-wrapper"}>
-    {children}
-  </Box>;
-};
+// const LinkWrapper: FC<PropsWithChildren> = ({ children }) => {
+//   return <Box
+//     className={"link-wrapper"}>
+//     {children}
+//   </Box>;
+// };
 
 export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
   const pathname = usePathname();
@@ -24,6 +24,7 @@ export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
   return (
     <Modal
       open={open}
+      onClose={onClose}
       slotProps={{
         backdrop: {
           sx: {
@@ -33,7 +34,7 @@ export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
         }
       }}
     >
-      <Box className={"layout menu-modal"}>
+      <Box className={"layout menu-modal"} onClick={onClose}>
         <IconButton onClick={onClose} className={"menu-modal__close "}>
           <SvgIcon component={CloseIcon} viewBox="0 0 44 44" className={"menu-modal__icon"} />
         </IconButton>
@@ -48,18 +49,17 @@ export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
             minWidth: "192px",
             border: "1px solid #EAE7E7",
             borderRadius: "10px",
-
             boxSizing: "border-box"
-
-
           }}>
           {
             Object.entries(RoutesTranslation).map(([link, name]) => (
-              <LinkWrapper key={link}>
+              <Box className={`link-wrapper ${link === pathname ? "link-wrapper--active" : ""}`} key={link}>
                 <Link href={link} onClick={onClose}>
-                  <Typography variant={"h1"} color={link === pathname ? "primary" : ""}>{name}</Typography>
+                  <Typography variant={"h1"}
+                    //color={link === pathname ? "primary" : ""}
+                  >{name}</Typography>
                 </Link>
-              </LinkWrapper>
+              </Box>
             ))
           }
         </Box>

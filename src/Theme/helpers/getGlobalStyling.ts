@@ -14,6 +14,21 @@ export const globalStyling = {
       zIndex: 2
     }
   },
+  "a": {
+    "&:hover ": {
+      color: "#ffcdcd",
+      ".MuiTypography-root": {
+        color: "#ffcdcd"
+      }
+    },
+
+    "&:active": {
+      color: "#454545",
+      ".MuiTypography-root ": {
+        color: "#454545"
+      }
+    }
+  },
   "*::-webkit-scrollbar": {
     width: "8px" /* ширина для вертикального скролла */,
     height: "8px" /* высота для горизонтального скролла */,
