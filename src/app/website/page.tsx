@@ -5,8 +5,6 @@ import back2 from "@/shared/images/back1024.jpg";
 import { Grid, Typography } from "@mui/material";
 import { PersonCard } from "./PersonCard";
 import React from "react";
-import Link from "next/link";
-import { Routes } from "@/shared/constants/Routes";
 
 const persons = [
   {
@@ -52,10 +50,7 @@ export default function Website() {
           <PersonCard key={index} {...person} />
         ))
       }
-
-      <Link href={Routes.PRIVACY_POLICY}>
-        <Typography variant={"p_24/13"} className={"person-card__link"}>PRIVATE WEBSITE</Typography>
-      </Link>
+      <Typography variant={"hedvig_20/13"}>PRIVATE WEBSITE</Typography>
 
 
       <BackgroundImage mainImageSrc={back3.src} alt={"background image"} sources={sources} />

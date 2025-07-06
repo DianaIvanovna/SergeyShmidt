@@ -22,7 +22,7 @@ export const PageContent = () => {
     >
 
       <Link href={Routes.TRACKS}>
-        <Typography variant={"p_24/13"} className={"home__title"}>
+        <Typography variant={"hedvig_24/13"} className={"home__title"}>
           YOU’RE SURE TO <br />FIND SOMETHING <br />FOR YOU IN MY <br />TRACKS
         </Typography>
       </Link>

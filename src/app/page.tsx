@@ -24,19 +24,6 @@ export default function Home() {
 
   return (
     <Box className={"home"}>
-      {/*<animated.div*/}
-      {/*  style={{*/}
-      {/*    position: "relative",*/}
-      {/*    ...springs*/}
-      {/*  }}*/}
-      {/*>*/}
-
-      {/*  <Link href={Routes.TRACKS}>*/}
-      {/*    <Typography variant={"p_24/13"} className={"home__title"}>*/}
-      {/*      YOU’RE SURE TO <br />FIND SOMETHING <br />FOR YOU IN MY <br />TRACKS*/}
-      {/*    </Typography>*/}
-      {/*  </Link>*/}
-      {/*</animated.div>*/}
       <PageContent />
       <BackgroundImage mainImageSrc={back3.src} alt={"background image"} sources={sources} />
     </Box>

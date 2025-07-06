@@ -29,13 +29,14 @@ export const PoemsActive: FC<PoemsActiveProps> = ({ poem, changePoem, poemLength
 
       <Box className={"poems__text-block"}>
         <div className={"poems__back-image"} style={{ backgroundImage: `url(${poem.imageBack})` }} />
-        <Typography variant={"p_48/32"} className={"poems__active-title"} color={"primary"}>{poem.title}</Typography>
+        <Typography variant={"arsenal_48/32"} className={"poems__active-title"}
+                    color={"primary"}>{poem.title}</Typography>
         <Typography
           dangerouslySetInnerHTML={
             { __html: poem.text }
           }
           className={"poems__text"}
-          variant={"p_32/17"}
+          variant={"arsenal_32/17"}
           sx={colorSx}
         />
         {/*<picture className={"poems__back-image"}>*/}
@@ -52,7 +53,7 @@ export const PoemsActive: FC<PoemsActiveProps> = ({ poem, changePoem, poemLength
               changePoem(poemIndex - 1);
             }}>
               <SvgIcon fontSize={"small"} component={arrowLeft} viewBox="0 0 44 44" sx={{ marginRight: "6px" }} />
-              <Typography variant={"p_24/13"} sx={colorSx}>PREVIOUS</Typography>
+              <Typography variant={"hedvig_24/13"} sx={colorSx}>PREVIOUS</Typography>
             </Button>
           )
         }
@@ -63,7 +64,7 @@ export const PoemsActive: FC<PoemsActiveProps> = ({ poem, changePoem, poemLength
             }}
                     className={"poems__button-next"}
             >
-              <Typography variant={"p_24/13"} sx={colorSx}>NEXT</Typography>
+              <Typography variant={"hedvig_24/13"} sx={colorSx}>NEXT</Typography>
               <SvgIcon fontSize={"small"} component={arrowRight} viewBox="0 0 44 44" sx={{ marginLeft: "6px" }} />
             </Button>
           )

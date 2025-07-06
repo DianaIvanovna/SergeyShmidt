@@ -18,7 +18,7 @@ export default function NotFound() {
   return (
     <Grid container direction={"column"} sx={{ alignItems: "center", justifyContent: "center" }}>
       <Typography variant={"h1"} className={"header-404"}>404</Typography>
-      <Typography variant={"p_24/13"}>Sorry, there was a problem, please come back later</Typography>
+      <Typography variant={"hedvig_24/13"}>Sorry, there was a problem, please come back later</Typography>
       <BackgroundImage mainImageSrc={back3.src} alt={"background image"} sources={sources} />
     </Grid>
   );

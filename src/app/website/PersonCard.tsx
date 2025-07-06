@@ -12,9 +12,9 @@ interface PersonCardProps {
 export const PersonCard: FC<PersonCardProps> = ({ work, name, link }) => {
   return (
     <Grid container direction={"column"} className={"person-card"}>
-      <Typography variant={"p_16/13"} className={"person-card__work"}>{work}: </Typography>
+      <Typography variant={"hedvig_16/13"} className={"person-card__work"}>{work}: </Typography>
       <Link href={link} target="_blank">
-        <Typography variant={"p_32/20"} className={"person-card__link"}>{name}</Typography>
+        <Typography variant={"hedvig_32/20"} className={"person-card__link"}>{name}</Typography>
       </Link>
 
     </Grid>

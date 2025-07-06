@@ -281,9 +281,9 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
               />
 
               <Grid container className="audio-player__text">
-                <Typography variant={"p_20/12"}>{parseTime(this.state.seek.toFixed(2)).join(":")}</Typography>
+                <Typography variant={"arsenal_20/12"}>{parseTime(this.state.seek.toFixed(2)).join(":")}</Typography>
                 <Typography
-                  variant={"p_20/12"}>{this.state.duration ? parseTime(this.state.duration.toFixed(2)).join(":") : "-"}</Typography>
+                  variant={"arsenal_20/12"}>{this.state.duration ? parseTime(this.state.duration.toFixed(2)).join(":") : "-"}</Typography>
 
               </Grid>
               <Grid container sx={{ justifyContent: "center" }}>

@@ -50,7 +50,7 @@ export const AudioItem: FC<AudioItemProps> = ({ song }) => {
       </Grid>
 
       <Grid sx={{ maxWidth: "450px" }}>
-        <Typography variant={"p_48/32"} sx={{ fontWeight: 400 }}>{song.title}</Typography>
+        <Typography variant={"arsenal_48/32"} sx={{ fontWeight: 400 }}>{song.title}</Typography>
         <Accordion
           expanded={song.id === openAboutSongId}
           onChange={() => {
@@ -63,7 +63,7 @@ export const AudioItem: FC<AudioItemProps> = ({ song }) => {
             id="panel1-header"
 
           >
-            <Typography variant={"p_16/12"}> About track</Typography>
+            <Typography variant={"hedvig_16/12"}> About track</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Grid container>
@@ -84,8 +84,8 @@ export const AudioItem: FC<AudioItemProps> = ({ song }) => {
                     }}
                     key={key}
                   >
-                    <Typography variant={"p_13/11"}>{item.title}</Typography>
-                    <Typography variant={"p_13/11"}
+                    <Typography variant={"hedvig_13/11"}>{item.title}</Typography>
+                    <Typography variant={"hedvig_13/11"}
                                 dangerouslySetInnerHTML={{
                                   __html: item.value
                                 }}

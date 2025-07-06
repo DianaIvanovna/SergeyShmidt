@@ -82,15 +82,15 @@ export const Footer = () => {
 
 
       <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-        <Typography variant={"p_24/11"}>GET IN TOUCH:{" "}
+        <Typography variant={"hedvig_24/11"}>GET IN TOUCH:{" "}
           <a href="mailto:contact@sergeyshmidt.com" className={"footer__mail"}>MAIL</a>
         </Typography>
 
         <Link href={Routes.PRIVACY_POLICY} className={"footer__privacy-policy"}>
-          <Typography variant={"p_16/9"}>PRIVACY POLICY</Typography>
+          <Typography variant={"hedvig_16/9"}>PRIVACY POLICY</Typography>
         </Link>
 
-        <Typography variant={"p_16/9"}>Copyright {new Date().getUTCFullYear()} | All Rights Reserved</Typography>
+        <Typography variant={"hedvig_16/9"}>Copyright {new Date().getUTCFullYear()} | All Rights Reserved</Typography>
       </Box>
     </animated.div>
   );
