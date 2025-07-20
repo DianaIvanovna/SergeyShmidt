@@ -11,13 +11,6 @@ interface MenuModalProp {
   onClose: () => void
 }
 
-// const LinkWrapper: FC<PropsWithChildren> = ({ children }) => {
-//   return <Box
-//     className={"link-wrapper"}>
-//     {children}
-//   </Box>;
-// };
-
 export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
   const pathname = usePathname();
 
@@ -44,9 +37,7 @@ export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
 
           className={"menu-modal__menu"}
           sx={{
-            maxWidth: "392px",
-            width: "70%",
-            minWidth: "192px",
+
             border: "1px solid #EAE7E7",
             borderRadius: "10px",
             boxSizing: "border-box"
@@ -56,7 +47,6 @@ export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
               <Box className={`link-wrapper ${link === pathname ? "link-wrapper--active" : ""}`} key={link}>
                 <Link href={link} onClick={onClose}>
                   <Typography variant={"h1"}
-                    //color={link === pathname ? "primary" : ""}
                   >{name}</Typography>
                 </Link>
               </Box>

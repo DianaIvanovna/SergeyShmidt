@@ -17,7 +17,11 @@
 
 .tracks-item {
   margin-bottom: 15px;
-  @media (min-width: $--md) {
+  @media (min-width: $--laptop) {
+    margin-bottom: 60px;
+  }
+
+  &:last-of-type {
     margin-bottom: 60px;
   }
 }
@@ -51,7 +55,13 @@
       height: 110px;
       top: -55px;
     }
-    @media (min-width: $--lg) {
+
+    //@media (min-width: $--lg) {
+    //  width: 130px;
+    //  height: 130px;
+    //  top: -65px;
+    //}
+    @media (min-width: $--laptop) {
       width: 130px;
       height: 130px;
       top: -65px;
@@ -60,20 +70,14 @@
 
   &__input-container {
 
-    //margin-top: 30px;
     margin-left: 18px;
     @media (min-width: $--sm) {
-      // margin-top: 35px;
       margin-left: 35px;
     }
     @media (min-width: $--md) {
-      // margin-top: 55px;
-      margin-left: 100px;
+      margin-left: 75px;
     }
-    @media (min-width: $--lg) {
-      //width: 65px;
-      //height: 124px;
-      // margin-top: 65px;
+    @media (min-width: $--laptop) {
       margin-left: 100px;
     }
   }
@@ -100,6 +104,11 @@
     }
 
     @media (min-width: $--md) {
+      max-width: 250px;
+      margin-top: 50px;
+      justify-content: space-between;
+    }
+    @media (min-width: $--laptop) {
       max-width: 360px;
       margin-top: 50px;
       justify-content: space-between;

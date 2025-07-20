@@ -5,6 +5,17 @@ import poGorodyImage from "@/shared/images/PO_GORODU.jpg";
 
 export const songsArr = [
   {
+    id: 4,
+    title: "Рассвет-Закат",
+    audioSrc: "",
+    image: darkness,
+    about: [],
+    spotify: "https://open.spotify.com/album/6ZqKOmtKcsp5QpYbKwWsRO",
+    appleMusic: "https://music.apple.com/us/album/темнота-single/1754069648",
+    yandex: "https://music.yandex.ru/album/32228930",
+    disabled: true
+  },
+  {
     id: 1,
     title: "ТЕМНОТА",
     audioSrc: "temnota.wav",
@@ -33,7 +44,6 @@ export const songsArr = [
     yandex: "https://music.yandex.ru/album/32228930",
     disabled: false
   },
-
   {
     id: 2,
     title: "FATE",

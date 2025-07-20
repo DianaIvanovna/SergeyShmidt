@@ -1,7 +1,7 @@
 
 .menu-modal__icon.MuiSvgIcon-root {
   font-size: 44px;
-  @media (min-width: 1024px) {
+  @media (min-width: $--laptop) {
     font-size: 58px;
   }
 }
@@ -28,10 +28,19 @@
 
   &__menu {
     padding: 62px 30px;
+
+    width: 70%;
+    max-width: 242px;
+    min-width: 192px;
     @media (min-width: $--md) {
       padding: 62px 40px;
     }
     @media (min-width: $--lg) {
+      max-width: 242px;
+      padding: 84px 40px
+    }
+    @media (min-width: $--laptop) {
+      max-width: 392px;
       padding: 127px 40px
     }
 
@@ -51,7 +60,7 @@
     @media (min-width: $--md) {
       left: 80px;
     }
-    @media (min-width: $--lg) {
+    @media (min-width: $--laptop) {
       left: 112px;
     }
   }

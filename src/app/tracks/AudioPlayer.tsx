@@ -15,9 +15,9 @@ import yandexIcon from "@/shared/icons/yandexFill.svg";
 import appleIcon from "@/shared/icons/appleFill.svg";
 
 import Link from "next/link";
-import { songsArr } from "@/app/tracks/constants";
 import { usePlayerContext } from "@/providers/player-store-provider";
 import { animated, Spring } from "@react-spring/web";
+import { songsArr } from "@/app/tracks/constants";
 
 
 interface AudioPlayerState {
@@ -40,6 +40,8 @@ interface AudioPlayerState {
 interface AudioPlayerStateProps {
   context: ReturnType<typeof usePlayerContext>;
 }
+
+const songsArrNotDisabled = songsArr.filter(song => !song.disabled);
 
 class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerState> {
   state: AudioPlayerState;
@@ -208,7 +210,7 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
   }
 
   changeSongs(currentIndex: number, isNext: boolean) {
-    const song = songsArr[isNext ? currentIndex + 1 : currentIndex - 1];
+    const song = songsArrNotDisabled[isNext ? currentIndex + 1 : currentIndex - 1];
     if (song) {
       this.props.context.getState().setActiveSong(song);
       this.props.context.getState().changeIsPlay(true);
@@ -218,7 +220,7 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
 
   render() {
 
-    const indexSong = songsArr.findIndex((item) => item.id === this.state.activeSong?.id);
+    const indexSong = songsArrNotDisabled.findIndex((item) => item.id === this.state.activeSong?.id);
 
 
     const player = (
@@ -241,7 +243,7 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
 
 
           <ReactHowler
-            src={this.state.activeSong?.audioSrc ?? songsArr[0].audioSrc}
+            src={this.state.activeSong?.audioSrc ?? songsArrNotDisabled[0].audioSrc}
             playing={this.state.playing}
             onLoad={this.handleOnLoad}
             onPlay={this.handleOnPlay}
@@ -281,9 +283,9 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
               />
 
               <Grid container className="audio-player__text">
-                <Typography variant={"arsenal_20/12"}>{parseTime(this.state.seek.toFixed(2)).join(":")}</Typography>
+                <Typography variant={"arsenal_20/14/12"}>{parseTime(this.state.seek.toFixed(2)).join(":")}</Typography>
                 <Typography
-                  variant={"arsenal_20/12"}>{this.state.duration ? parseTime(this.state.duration.toFixed(2)).join(":") : "-"}</Typography>
+                  variant={"arsenal_20/14/12"}>{this.state.duration ? parseTime(this.state.duration.toFixed(2)).join(":") : "-"}</Typography>
 
               </Grid>
               <Grid container sx={{ justifyContent: "center" }}>
@@ -295,16 +297,14 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
                 </IconButton>
                 <IconButton className="audio-player__play-button" onClick={this.handleToggle}
                             disabled={!this.state.loaded}>
-
-
                   {
                     !this.state.loaded ?
                       <SvgIcon fontSize={"large"} component={loadingIcon} viewBox="0 0 80 80" className={"spinner"} />
                       : this.state.playing ? <SvgIcon fontSize={"large"} component={pauseIcon} viewBox="0 0 80 80" /> :
-                        <SvgIcon fontSize={"large"} component={playIcon} viewBox="0 0 44 44" />
+                        <SvgIcon fontSize={"large"} component={playIcon} viewBox="0 0 44 45" />
                   }
                 </IconButton>
-                <IconButton disabled={indexSong === (songsArr.length - 1)} onClick={() => {
+                <IconButton disabled={indexSong === (songsArrNotDisabled.length - 1)} onClick={() => {
                   this.changeSongs(indexSong, true);
                 }}>
                   <SvgIcon fontSize={"medium"} component={nextIcon} viewBox="0 0 50 50" />
@@ -366,15 +366,13 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
     return (
       <>
         {/* Скрытые плееры для предзагрузки всех песен */}
-        {songsArr.map(song => (
-          <ReactHowler
-            key={`preload-${song.id}`}
-            src={song.audioSrc}
-            preload={true}
-            volume={0} // Делаем не слышимыми
-            playing={false}
-          />
-        ))}
+        {songsArrNotDisabled.map(song => (<ReactHowler
+          key={`preload-${song.id}`}
+          src={song.audioSrc}
+          preload={true}
+          volume={0} // Делаем не слышимыми
+          playing={false}
+        />))}
 
         {this.state.activeSong && player}
       </>

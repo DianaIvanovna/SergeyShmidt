@@ -28,76 +28,91 @@ export const AudioItem: FC<AudioItemProps> = ({ song }) => {
   return (
     <Grid container wrap={"nowrap"} className={"tracks-item"}>
       <Grid sx={{ marginRight: "15px" }}>
-        <IconButton onClick={() => {
-          if (activeSong === song) {
-            changeIsPlay(!isPlay);
-          } else {
-            setActiveSong(song);
-            changeIsPlay(true);
-          }
-        }}>
+
+        <IconButton
+          onClick={() => {
+            if (activeSong === song) {
+              changeIsPlay(!isPlay);
+            } else {
+              setActiveSong(song);
+              changeIsPlay(true);
+            }
+
+          }}
+          disabled={song.disabled}
+          sx={{ opacity: song.disabled ? 0 : 1 }}
+        >
 
           {isPlaySong ?
             <SvgIcon fontSize={"large"} component={pauseIcon} viewBox="0 0 80 80" /> :
-            <SvgIcon fontSize={"large"} component={playIcon} viewBox="0 0 44 44" />
+            <SvgIcon fontSize={"large"} component={playIcon} viewBox="0 0 44 45" />
           }
         </IconButton>
-        {/*<button onClick={() => {*/}
-        {/*  setActiveSong(null);*/}
-        {/*  changeIsPlay(false);*/}
-        {/*}}>x*/}
-        {/*</button>*/}
       </Grid>
 
       <Grid sx={{ maxWidth: "450px" }}>
         <Typography variant={"arsenal_48/32"} sx={{ fontWeight: 400 }}>{song.title}</Typography>
-        <Accordion
-          expanded={song.id === openAboutSongId}
-          onChange={() => {
-            setOpenAboutSongId(song.id === openAboutSongId ? null : song.id);
-          }}
-        >
-          <AccordionSummary
-            expandIcon={<SvgIcon fontSize={"small"} component={expandIcon} viewBox="0 0 30 30" />}
-            aria-controls="panel1-content"
-            id="panel1-header"
+        {
+          song.disabled ?
+            <Typography
+              variant={"hedvig_16/14/12"}
+              sx={{
+                marginTop: "10px",
+                display: "inline-block",
+                color: "#E5CFCF"
+              }}
+            >Will be out
+              soon</Typography>
+            : <Accordion
+              expanded={song.id === openAboutSongId}
+              onChange={() => {
+                setOpenAboutSongId(song.id === openAboutSongId ? null : song.id);
+              }}
+            >
+              <AccordionSummary
+                expandIcon={<SvgIcon fontSize={"small"} component={expandIcon} viewBox="0 0 30 30" />}
+                aria-controls="panel1-content"
+                id="panel1-header"
 
-          >
-            <Typography variant={"hedvig_16/12"}> About track</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Grid container>
-              {
-                song.about.map((item, key) => (
-                  <Grid
-                    container
-                    wrap={"nowrap"}
-                    sx={{
-                      justifyContent: "space-between",
-                      alignItems: "flex-start",
-                      gap: "10px",
-                      marginBottom: "16px",
+              >
+                <Typography variant={"hedvig_16/14/12"}> About track</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Grid container>
+                  {
+                    song.about.map((item, key) => (
+                      <Grid
+                        container
+                        wrap={"nowrap"}
+                        sx={{
+                          justifyContent: "space-between",
+                          alignItems: "flex-start",
+                          gap: "10px",
+                          marginBottom: "16px",
 
-                      "& a": {
-                        textDecoration: "underline"
-                      }
-                    }}
-                    key={key}
-                  >
-                    <Typography variant={"hedvig_13/11"}>{item.title}</Typography>
-                    <Typography variant={"hedvig_13/11"}
-                                dangerouslySetInnerHTML={{
-                                  __html: item.value
-                                }}
-                                sx={{ textAlign: "right" }}
-                    />
-                  </Grid>
-                ))
-              }
+                          "& a": {
+                            textDecoration: "underline"
+                          }
+                        }}
+                        key={key}
+                      >
+                        <Typography variant={"hedvig_13/11"}>{item.title}</Typography>
+                        <Typography variant={"hedvig_13/11"}
+                                    dangerouslySetInnerHTML={{
+                                      __html: item.value
+                                    }}
+                                    sx={{ textAlign: "right" }}
+                        />
+                      </Grid>
+                    ))
+                  }
 
-            </Grid>
-          </AccordionDetails>
-        </Accordion>
+                </Grid>
+              </AccordionDetails>
+            </Accordion>
+
+        }
+
       </Grid>
     </Grid>
   );

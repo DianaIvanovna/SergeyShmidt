@@ -7,8 +7,8 @@ export const CustomTypography = (): OverrideComponentType<"MuiTypography"> => {
     MuiTypography: {
       defaultProps: {
         variantMapping: {
-          "p_48/32": "p",
-          "p_32/17": "p"
+          "arsenal_48/32": "p",
+          "arsenal_32/17": "p"
         }
       }
     }

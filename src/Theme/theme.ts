@@ -4,6 +4,16 @@ import { muiComponents } from "@/theme/overrides";
 import { muiPalette } from "@/theme/palette";
 import { muiTypography } from "@/theme/overrides/Typography/Typography";
 
+declare module "@mui/material/styles" {
+  interface BreakpointOverrides {
+    xs: true; // removes the `xs` breakpoint
+    sm: true;
+    md: true;
+    lg: true;
+    xl: true;
+    laptop: true;
+  }
+}
 
 let theme = createTheme({
   palette: muiPalette(),
@@ -13,6 +23,7 @@ let theme = createTheme({
       sm: 380,
       md: 640,
       lg: 1024,
+      laptop: 1400,
       xl: 1920
     }
   }

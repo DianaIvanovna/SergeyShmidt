@@ -12,7 +12,6 @@ export default function Tracks() {
   const sources = [
     {
       srcSet: back1.src,
-      // media: "(min-width: 1024px)"
       media: "(min-width: 1400px)"
     },
     {
@@ -20,12 +19,9 @@ export default function Tracks() {
       media: "(min-width: 640px)"
     }
   ];
-  // const context = usePlayerContext();
 
   return (
     <Grid container flexDirection={"column"} className={"tracks"} flexWrap={"nowrap"}>
-      {/*<AudioList />*/}
-      {/*<AudioPlayer context={context} />*/}
       <AudioContent />
       <BackgroundImage mainImageSrc={back3.src} alt={"background image"} sources={sources} className={"tracks__back"} />
     </Grid>
