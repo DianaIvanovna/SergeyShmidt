@@ -25,7 +25,7 @@ const fontBold = Arsenal({
 export const metadata: Metadata = {
   title: "Sergey Shmidt",
   description: "",
-  viewport: "width=device-width, initial-scale=1.0, viewport-fit=cover",
+  viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
   icons: {
     icon: [
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
@@ -46,9 +46,9 @@ export default function RootLayout({ children }: Readonly<{
   children: React.ReactNode;
 }>) {
 
+
   return (
-    // TODO подумай о языке ru или en??
-    <html lang="en">
+    <html>
     <body className={`${fontRegular.variable} ${fontBold.variable}`}>
     <PlayerStoreProvider>
       <AppRouterCacheProvider options={{ key: "css" }}>

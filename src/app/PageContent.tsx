@@ -5,6 +5,7 @@ import { Routes } from "@/shared/constants/Routes";
 import { Typography } from "@mui/material";
 import React from "react";
 import { animated, useSpring } from "@react-spring/web";
+import { useLockOrientation } from "@/app/useLockOrientation";
 
 export const PageContent = () => {
   const springs = useSpring({
@@ -12,6 +13,7 @@ export const PageContent = () => {
     to: { bottom: "0px", opacity: 1 },
     delay: 300
   });
+  useLockOrientation();
 
   return (
     <animated.div
