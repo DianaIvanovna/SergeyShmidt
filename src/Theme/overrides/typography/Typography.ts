@@ -9,12 +9,12 @@ declare module "@mui/material" {
     "arsenal_32/17": true,
     "arsenal_20/14/12": true,
 
-    "hedvig_32/20": true,
+    "hedvig_32/24/20": true,
     "hedvig_24/11": true,
     "hedvig_24/13": true,
     "hedvig_24/18/13": true,
     "hedvig_20/13": true,
-    "hedvig_16/13": true,
+    "hedvig_16/14/13": true,
     "hedvig_16/14/12": true,
     "hedvig_16/14/9": true,
     "hedvig_13/11": true,
@@ -26,12 +26,12 @@ declare module "@mui/material" {
     "arsenal_32/17": string,
     "arsenal_20/14/12": string,
 
-    "hedvig_32/20": string,
+    "hedvig_32/24/20": string,
     "hedvig_24/11": string,
     "hedvig_24/13": string,
     "hedvig_24/18/13": string,
     "hedvig_20/13": string,
-    "hedvig_16/13": string,
+    "hedvig_16/14/13": string,
     "hedvig_16/14/12": string,
     "hedvig_16/14/9": string,
     "hedvig_13/11": string
@@ -45,12 +45,12 @@ declare module "@mui/material/styles" {
     "arsenal_32/17": React.CSSProperties;
     "arsenal_20/14/12": React.CSSProperties;
 
-    "hedvig_32/20": React.CSSProperties;
+    "hedvig_32/24/20": React.CSSProperties;
     "hedvig_24/11": React.CSSProperties;
     "hedvig_24/13": React.CSSProperties;
     "hedvig_24/18/13": React.CSSProperties;
     "hedvig_20/13": React.CSSProperties;
-    "hedvig_16/13": React.CSSProperties;
+    "hedvig_16/14/13": React.CSSProperties;
     "hedvig_16/14/12": React.CSSProperties;
     "hedvig_16/14/9": React.CSSProperties;
     "hedvig_13/11": React.CSSProperties;
@@ -62,12 +62,12 @@ declare module "@mui/material/styles" {
     "arsenal_32/17": React.CSSProperties;
     "arsenal_20/14/12": React.CSSProperties;
 
-    "hedvig_32/20": React.CSSProperties;
+    "hedvig_32/24/20": React.CSSProperties;
     "hedvig_24/11": React.CSSProperties;
     "hedvig_24/13": React.CSSProperties;
     "hedvig_24/18/13": React.CSSProperties;
     "hedvig_20/13": React.CSSProperties;
-    "hedvig_16/13": React.CSSProperties;
+    "hedvig_16/14/13": React.CSSProperties;
     "hedvig_16/14/12": React.CSSProperties;
     "hedvig_16/14/9": React.CSSProperties;
     "hedvig_13/11": React.CSSProperties;
@@ -150,7 +150,7 @@ export const muiTypography = (theme: Theme): ThemeOptions["typography"] => {
       }
     },
 
-    "hedvig_32/20": {
+    "hedvig_32/24/20": {
       fontFamily: "var(--font-hedvig-letters-serif)",
       fontWeight: 400,
       fontSize: "20px",
@@ -158,8 +158,12 @@ export const muiTypography = (theme: Theme): ThemeOptions["typography"] => {
       letterSpacing: "0.02em",
 
       [theme.breakpoints.up("md")]: {
-        fontSize: "32px",
+        fontSize: "24px",
         lineHeight: "83%"
+      },
+      [theme.breakpoints.up("laptop")]: {
+        fontSize: "32px",
+
       }
     },
     "hedvig_24/11": {
@@ -217,7 +221,7 @@ export const muiTypography = (theme: Theme): ThemeOptions["typography"] => {
         fontSize: "20px"
       }
     },
-    "hedvig_16/13": {
+    "hedvig_16/14/13": {
       fontFamily: "var(--font-hedvig-letters-serif)",
       fontWeight: 400,
       fontSize: "13px",
@@ -226,8 +230,12 @@ export const muiTypography = (theme: Theme): ThemeOptions["typography"] => {
 
 
       [theme.breakpoints.up("md")]: {
+        fontSize: "14px"
+      },
+      [theme.breakpoints.up("laptop")]: {
         fontSize: "16px"
       }
+
     },
     "hedvig_16/14/12": {
       fontFamily: "var(--font-hedvig-letters-serif)",

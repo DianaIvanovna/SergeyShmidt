@@ -23,8 +23,18 @@
   @media (min-width: $--md) {
     &__work.MuiTypography-root {
       margin-bottom: 16px;
+      color: #E5CFCF
     }
+  }
+}
 
-
+.website__privacy-policy {
+  display: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  @media (max-width: $--lg) {
+    display: block;
+    margin-bottom: 50px;
   }
 }
