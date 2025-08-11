@@ -30,9 +30,9 @@ export const globalStyling = {
     }
   },
   "*::-webkit-scrollbar": {
-    width: "8px" /* ширина для вертикального скролла */,
-    height: "8px" /* высота для горизонтального скролла */,
-    backgroundColor: "transparent"
+    width: "2px" /* ширина для вертикального скролла */,
+    height: "2px" /* высота для горизонтального скролла */,
+    backgroundColor: "#D9D9D9"
   },
 
   "*::-webkit-scrollbar-track": {},

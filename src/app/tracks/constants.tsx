@@ -51,11 +51,11 @@ export const songsArr = [
     image: FateImage,
     about: [
       {
-        title: "Lyrics, Music, Arrangement",
-        value: "Sergey Shmidt"
+        title: "Release",
+        value: "2023/03/10"
       },
       {
-        title: "Vocals, Guitars, Bass",
+        title: "Lyrics, Music, Arrangement, Vocals, Guitars, Bass",
         value: "Sergey Shmidt"
       },
       {
@@ -71,7 +71,7 @@ export const songsArr = [
         target="_blank"
         rel="noreferrer"
       >SCB-Music</a>`
-      }
+      },
     ],
     spotify: "https://open.spotify.com/album/3ySiYyEghhNxYjJwfTMZJx",
     appleMusic: "https://music.apple.com/us/album/fate-single/1671242220",
@@ -85,12 +85,13 @@ export const songsArr = [
     audioSrc: "PO_GORODU.wav",
     image: poGorodyImage,
     about: [
+
       {
-        title: "Lyrics, Music, Arrangement",
-        value: "Sergey Shmidt"
+        title: "Release",
+        value: "2022/05/13"
       },
       {
-        title: "Vocals, Guitars, Bass",
+        title: "Lyrics, Music, Arrangement, Vocals, Guitars, Bass",
         value: "Sergey Shmidt"
       },
       {

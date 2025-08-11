@@ -54,11 +54,11 @@ export default function Website() {
       }
 
       <Link href={Routes.PRIVACY_POLICY} className={"website__privacy-policy"}>
-        <Typography variant={"hedvig_20/13"}>PRIVACY POLICY</Typography>
+        <Typography variant={"hedvig_32/24/20"}>PRIVACY POLICY</Typography>
       </Link>
 
 
-      <Typography variant={"hedvig_20/13"}>PRIVATE WEBSITE</Typography>
+      <Typography variant={"hedvig_16/14/9"}>PRIVATE WEBSITE</Typography>
 
 
       <BackgroundImage mainImageSrc={back3.src} alt={"background image"} sources={sources} />

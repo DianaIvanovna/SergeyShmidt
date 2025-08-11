@@ -26,6 +26,12 @@
   }
 }
 
+.tracks-item__about-title {
+  @media (max-width: $--md) {
+    max-width: 180px;
+  }
+}
+
 
 .audio-player {
 
