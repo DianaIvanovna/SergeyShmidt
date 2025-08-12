@@ -1,8 +1,8 @@
 "use client";
 import { createTheme } from "@mui/material/styles";
-import { muiComponents } from "@/theme/overrides";
-import { muiPalette } from "@/theme/palette";
-import { muiTypography } from "@/theme/overrides/Typography/Typography";
+import { muiComponents } from "@/Theme/overrides";
+import { muiPalette } from "@/Theme/palette";
+import { muiTypography } from "@/Theme/overrides/typography/Typography";
 
 declare module "@mui/material/styles" {
   interface BreakpointOverrides {

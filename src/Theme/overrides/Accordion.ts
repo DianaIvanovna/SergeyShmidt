@@ -1,4 +1,4 @@
-import { OverrideComponentType } from "@/theme/type";
+import { OverrideComponentType } from "@/Theme/type";
 
 export const muiAccordion = (): OverrideComponentType<"MuiAccordion"> => {
 

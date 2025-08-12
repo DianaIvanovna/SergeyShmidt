@@ -18,6 +18,8 @@ export const  useLockOrientation = (
       try {
         // Поддержка Screen Orientation API (современные браузеры)
         if ('screen' in window && 'orientation' in window.screen) {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
           await window.screen.orientation.lock(orientation);
         }
         // Альтернатива для iOS и старых Android (через CSS + мета-тег)

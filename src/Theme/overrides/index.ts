@@ -1,9 +1,9 @@
 // ** MUI Imports
 import { Theme } from "@mui/material/styles";
-import { SvgIcon } from "@/theme/overrides/SvgIcon";
-import { IconButton } from "@/theme/overrides/iconButton/iconButton";
-import { CustomTypography } from "@/theme/overrides/Typography/CustomTypography";
-import { muiAccordion } from "@/theme/overrides/Accordion";
+import { SvgIcon } from "@/Theme/overrides/SvgIcon";
+import { IconButton } from "@/Theme/overrides/iconButton/iconButton";
+import { muiAccordion } from "@/Theme/overrides/Accordion";
+import { CustomTypography } from "@/Theme/overrides/typography/CustomTypography";
 
 // ** Overrides Imports
 

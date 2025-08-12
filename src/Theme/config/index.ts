@@ -9,7 +9,7 @@ import {
   SvgIconProps,
   SwitchProps
 } from "@mui/material";
-import { ContentWidth, ThemeColor } from "@/theme/type";
+import { ContentWidth, ThemeColor } from "@/Theme/type";
 
 type ThemeConfig = {
   mode: PaletteMode;

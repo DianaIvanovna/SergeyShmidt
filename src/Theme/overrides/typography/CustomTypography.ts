@@ -1,4 +1,4 @@
-import { OverrideComponentType } from "@/theme/type";
+import { OverrideComponentType } from "@/Theme/type";
 
 
 export const CustomTypography = (): OverrideComponentType<"MuiTypography"> => {
@@ -8,7 +8,7 @@ export const CustomTypography = (): OverrideComponentType<"MuiTypography"> => {
       defaultProps: {
         variantMapping: {
           "arsenal_48/32": "p",
-          "arsenal_32/17": "p"
+          "arsenal_32/18": "p"
         }
       }
     }

@@ -1,4 +1,4 @@
-import { OverrideComponentType } from "@/theme/type";
+import { OverrideComponentType } from "@/Theme/type";
 import "./IconButton.scss";
 
 

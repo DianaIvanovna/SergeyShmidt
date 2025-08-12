@@ -5,10 +5,11 @@ import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
-import theme from "@/theme/theme";
+
 import { Box, GlobalStyles } from "@mui/material";
-import { globalStyling } from "@/theme/helpers/getGlobalStyling";
 import { PlayerStoreProvider } from "@/providers/player-store-provider";
+import theme from "@/Theme/theme";
+import { globalStyling } from "@/Theme/helpers/getGlobalStyling";
 
 
 const fontRegular = Hedvig_Letters_Serif({
