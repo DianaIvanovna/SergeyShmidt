@@ -1,10 +1,13 @@
 @import 'normalize.css';
 
+$--min-height: 600px;
+
 html,
 body {
   max-width: 100vw;
   max-height: 100vh;
   color: $--content-main;
+  min-height: $--min-height;
 }
 
 body {
@@ -31,6 +34,7 @@ body {
   box-sizing: border-box;
   margin: 0 auto;
   max-height: 100svh;
+  min-height: $--min-height;
 
   @media (min-width: $--sm) {
     padding: 20px 24px;

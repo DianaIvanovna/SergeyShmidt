@@ -24,6 +24,13 @@ export const MenuModal: FC<MenuModalProp> = ({ open, onClose }) => {
             backgroundColor: "transparent",
             backdropFilter: "blur(10px)"
           }
+        },
+        root: {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
+          sx: {
+            overflow: "auto"
+          }
         }
       }}
     >

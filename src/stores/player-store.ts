@@ -8,6 +8,7 @@ export type PlayerState = {
 }
 
 export type PlayerActions = {
+  resetStore: () => void
   changeIsPlay: (value: boolean) => void
   setActiveSong: (song: typeof songsArr[number] | null) => void,
   setOpenAboutSongId: (id: number | null) => void
@@ -26,6 +27,9 @@ export const createPlayerStore = (
 ) => {
   return createStore<PlayerStore>()((set) => ({
     ...initState,
+    resetStore: ()=> set(() => ({   isPlay: false,
+      activeSong: null,
+      openAboutSongId: null })),
     changeIsPlay: (value) => set(() => ({ isPlay: value })),
     setActiveSong: (song) => set(() => ({ activeSong: song })),
     setOpenAboutSongId: (id) => set(() => ({ openAboutSongId: id }))

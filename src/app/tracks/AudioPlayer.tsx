@@ -255,12 +255,12 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
             //@ts-ignore
             ref={(ref) => (this.player = ref)}
           />
-          <Box
-            className={"audio-player__black-box"}
-            sx={{
-              top: this.state.blackBoxTop
-            }}
-          />
+          {/*<Box*/}
+          {/*  className={"audio-player__black-box"}*/}
+          {/*  sx={{*/}
+          {/*    top: this.state.blackBoxTop*/}
+          {/*  }}*/}
+          {/*/>*/}
           <Grid container wrap={"nowrap"}>
             {
               this.state.activeSong && <Image src={this.state.activeSong.image} alt={this.state.activeSong.title}

@@ -34,7 +34,7 @@ export const PoemsActive: FC<PoemsActiveProps> = ({ poem, changePoem, poemLength
       </Box>
 
       <Box className={"poems__text-block"}>
-        <div className={"poems__back-image"} style={{ backgroundImage: `url(${poem.imageBack})` }} />
+        {/*<div className={"poems__back-image"} style={{ backgroundImage: `url(${poem.imageBack})` }} />*/}
         <Typography variant={"arsenal_48/32"} className={"poems__active-title"}
                     color={"primary"}>{poem.title}</Typography>
         <Typography
