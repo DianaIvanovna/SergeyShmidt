@@ -2,7 +2,7 @@
 import React, { createRef } from "react";
 import ReactHowler from "react-howler";
 import raf from "raf";
-import { Box, debounce, Grid, IconButton, SvgIcon, Typography } from "@mui/material";
+import { debounce, Grid, IconButton, SvgIcon, Typography } from "@mui/material";
 import pauseIcon from "@/shared/icons/pause.svg";
 import loadingIcon from "@/shared/icons/loading.svg";
 import nextIcon from "@/shared/icons/next.svg";
@@ -322,7 +322,7 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
                 target="_blank"
                 rel="noreferrer"
               >
-                <SvgIcon fontSize={"small"} component={spotifyIcon} viewBox="0 0 44 44" />
+                <SvgIcon fontSize={"small"} component={spotifyIcon} viewBox="0 0 46 46" />
               </Link>
             }
             {

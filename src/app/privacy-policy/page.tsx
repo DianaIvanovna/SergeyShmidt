@@ -126,7 +126,7 @@ export default function PrivacyPolicy() {
         </Typography>
         <Typography className="privacy_policy__text">
           Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website
-          ist: Sergey Shmidt, E-Mail-Adresse siehe unter „CONTACTS“ auf dieser
+          ist: Sergey Shmidt, E-Mail-Adresse siehe unter „GET IN TOUCH“ auf dieser
           Website. Verantwortliche Stelle ist die natürliche Person, die allein
           oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung
           von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.)

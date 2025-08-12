@@ -40,7 +40,7 @@ export const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <SvgIcon fontSize={"small"} component={spotifyIcon} viewBox="0 0 44 44" />
+            <SvgIcon fontSize={"small"} component={spotifyIcon} viewBox="0 0 45 45" />
           </Link>
           <Link
             href={"https://music.apple.com/us/artist/1624083979"}
