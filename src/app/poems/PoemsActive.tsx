@@ -1,5 +1,5 @@
 import { poemType } from "@/app/poems/poems";
-import React, { FC } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import { Box, Button, IconButton, SvgIcon, Typography } from "@mui/material";
 import arrowLeft from "@/shared/icons/double-arrow-left.svg";
 import arrowRight from "@/shared/icons/double-arrow-right.svg";
@@ -17,6 +17,12 @@ const colorSx = {
 };
 
 export const PoemsActive: FC<PoemsActiveProps> = ({ poem, changePoem, poemLength, poemIndex }) => {
+
+  const ref = useRef<HTMLSpanElement>(null)
+  useEffect(()=>{
+    ref.current?.scrollTo({ top: 0, behavior: 'smooth' })
+  },[poem])
+
   return (
     <Box className={"poems__active"}>
       <Box className={"poems__back-icon"}>
@@ -38,6 +44,7 @@ export const PoemsActive: FC<PoemsActiveProps> = ({ poem, changePoem, poemLength
           className={"poems__text"}
           variant={"arsenal_32/18"}
           sx={colorSx}
+          ref={ref}
         />
         {/*<picture className={"poems__back-image"}>*/}
         {/*  <source media="(min-width: 700px)" srcSet={poem.imageBackBig} />*/}
