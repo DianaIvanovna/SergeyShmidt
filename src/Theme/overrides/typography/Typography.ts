@@ -6,7 +6,7 @@ declare module "@mui/material" {
   interface TypographyPropsVariantOverrides {
     "arsenal_48/32": true,
     "arsenal_36/24": true,
-    "arsenal_32/17": true,
+    "arsenal_32/18": true,
     "arsenal_20/14/12": true,
 
     "hedvig_32/24/20": true,
@@ -23,7 +23,7 @@ declare module "@mui/material" {
   interface TypographyClasses {
     "arsenal_48/32": string,
     "arsenal_36/24": string,
-    "arsenal_32/17": string,
+    "arsenal_32/18": string,
     "arsenal_20/14/12": string,
 
     "hedvig_32/24/20": string,
@@ -42,7 +42,7 @@ declare module "@mui/material/styles" {
   interface TypographyVariantsOptions {
     "arsenal_48/32": React.CSSProperties;
     "arsenal_36/24": React.CSSProperties;
-    "arsenal_32/17": React.CSSProperties;
+    "arsenal_32/18": React.CSSProperties;
     "arsenal_20/14/12": React.CSSProperties;
 
     "hedvig_32/24/20": React.CSSProperties;
@@ -59,7 +59,7 @@ declare module "@mui/material/styles" {
   interface TypographyVariants {
     "arsenal_48/32": React.CSSProperties;
     "arsenal_36/24": React.CSSProperties;
-    "arsenal_32/17": React.CSSProperties;
+    "arsenal_32/18": React.CSSProperties;
     "arsenal_20/14/12": React.CSSProperties;
 
     "hedvig_32/24/20": React.CSSProperties;
@@ -120,20 +120,37 @@ export const muiTypography = (theme: Theme): ThemeOptions["typography"] => {
       fontSize: "24px",
       lineHeight: "100%",
       letterSpacing: "0.08em",
-      [theme.breakpoints.up("md")]: {
+      [theme.breakpoints.up("laptop")]: {
         fontSize: "36px"
 
       }
     },
-    "arsenal_32/17": {
+    "arsenal_32/18": {
       fontFamily: "var(--font-arsenal)",
       fontWeight: 400,
-      fontSize: "17px",
+      fontSize: "18px",
       lineHeight: "120%",
       letterSpacing: "0.0em",
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "18px"
+      },
       [theme.breakpoints.up("md")]: {
         fontSize: "32px"
-      }
+      },
+      [theme.breakpoints.up("lg")]: {
+        fontSize: "24px"
+      },
+      [theme.breakpoints.up("laptop")]: {
+        fontSize: "32px"
+      },
+
+
+      // [theme.breakpoints.up("md")]: {
+      //   fontSize: "32px"
+      // },
+      // [theme.breakpoints.up("laptop")]: {
+      //   fontSize: "32px"
+      // }
     },
     "arsenal_20/14/12": {
       fontFamily: "var(--font-arsenal)",

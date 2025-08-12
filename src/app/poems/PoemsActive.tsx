@@ -36,7 +36,7 @@ export const PoemsActive: FC<PoemsActiveProps> = ({ poem, changePoem, poemLength
             { __html: poem.text }
           }
           className={"poems__text"}
-          variant={"arsenal_32/17"}
+          variant={"arsenal_32/18"}
           sx={colorSx}
         />
         {/*<picture className={"poems__back-image"}>*/}
