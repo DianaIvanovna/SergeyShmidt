@@ -26,7 +26,7 @@ export const Header = () => {
       <Menu />
       <Link href={Routes.HOME}>
         <Typography variant={"h2"}>SERGEY
-          <br />SHMIDT(v6)</Typography>
+          <br />SHMIDT(v7)</Typography>
       </Link>
 
 
