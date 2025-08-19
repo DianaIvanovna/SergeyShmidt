@@ -22,6 +22,11 @@ export const usePoemsModel = () => {
     from: { display: window.innerWidth > windowWidth ? "flex" : "none", opacity: 0 }
   }));
 
+  const [backSpring, backListApi] = useSpring(() => ({
+    from: { opacity: 0, display: "none" },
+    to: { opacity: 1, display: "none" }
+  }));
+
   useEffect(() => {
     if (isFullPage && poemIndex === null) {
       setPoemIndex(0);
@@ -32,13 +37,39 @@ export const usePoemsModel = () => {
     // console.log("setActivePoemAnim", showBlock);
     // console.log("setPoemListAnim", isFullPage ? true : !showBlock);
     setActivePoemAnim(showBlock);
+    setBackPoem(showBlock)
     setPoemListAnim(isFullPage ? true : !showBlock);
+
   }, [poemIndex, isFullPage]);
 
+  function setBackPoem( showBlock: boolean) {
+    if (showBlock) {
+      backListApi.start({
+        from: {
+          display: "flex",
+          opacity: 0
+        },
+        to: {
+          opacity: 1,
+          display: "flex"
+        }
+      });
+    } else {
+      backListApi.start({
+        from: {
+          opacity: 1,
+          display: "flex"
+        },
+        to: {
+          opacity: 0,
+          display: "none"
+        }
+      });
+    }
+  }
 
   function setActivePoemAnim(showBlock: boolean) {
     if (showBlock) {
-
       activePoemApi.start({
         from: {
           display: "flex",
@@ -136,158 +167,7 @@ export const usePoemsModel = () => {
     poemIndex,
     changePoem,
     poemsListSpring,
-    activePoemSpring
+    activePoemSpring,
+    backSpring
   };
 };
-
-//
-// "use client";
-// import { useSpring } from "@react-spring/web";
-// import { useMediaQuery } from "@mui/material";
-// import { useEffect, useState } from "react";
-// import { useSearchParams } from "next/navigation";
-// import { poemsArr } from "@/app/poems/poems";
-//
-// const windowWidth = 1024;
-//
-// export const usePoemsModel = () => {
-//   const isFullPage = useMediaQuery(`(min-width:${windowWidth}px)`);
-//   const searchParams = useSearchParams();
-//   const [isWideScreen, setIsWideScreen] = useState(false);
-//   const [poemIndex, setPoemIndex] = useState<number | null>(null);
-//
-//   useEffect(() => {
-//     setIsWideScreen(window.innerWidth > windowWidth);
-//     setPoemIndex(checkSearchParams());
-//   }, [searchParams]);
-//
-//   const [poemsListSpring, poemsListApi] = useSpring(() => ({
-//     from: { opacity: 0, display: "block" },
-//     to: { opacity: 1, display: "block" }
-//   }));
-//
-//   const [activePoemSpring, activePoemApi] = useSpring(() => ({
-//     from: {
-//       display: isWideScreen ? "block" : "none",
-//       opacity: 0
-//     }
-//   }));
-//
-//   useEffect(() => {
-//     if (isFullPage && poemIndex === null) {
-//       setPoemIndex(0);
-//     }
-//
-//     const showBlock = poemIndex !== null;
-//     // console.log("!!!");
-//     // console.log("setActivePoemAnim", showBlock);
-//     // console.log("setPoemListAnim", isFullPage ? true : !showBlock);
-//     setActivePoemAnim(showBlock);
-//     setPoemListAnim(isFullPage ? true : !showBlock);
-//   }, [poemIndex, isFullPage]);
-//
-//
-//   function setActivePoemAnim(showBlock: boolean) {
-//     if (showBlock) {
-//
-//       activePoemApi.start({
-//         from: {
-//           display: "block",
-//           opacity: 0
-//         },
-//         to: {
-//           opacity: 1,
-//           display: "block"
-//         }
-//       });
-//     } else {
-//       activePoemApi.start({
-//         from: {
-//           opacity: 1,
-//           display: "block"
-//         },
-//         to: {
-//           opacity: 0,
-//           display: "none"
-//         }
-//       });
-//     }
-//   }
-//
-//   function setPoemListAnim(showBlock: boolean) {
-//     if (isFullPage) {
-//       poemsListApi.start({
-//         from: {
-//           opacity: 1,
-//           display: "block"
-//         },
-//         to: {
-//           opacity: 1,
-//           display: "block"
-//         }
-//       });
-//       return;
-//     }
-//
-//     if (showBlock) {
-//       poemsListApi.start({
-//         from: {
-//           opacity: 0,
-//           display: "block"
-//         },
-//         to: {
-//           opacity: 1,
-//           display: "block"
-//         }
-//       });
-//     } else {
-//       poemsListApi.start({
-//         from: {
-//           opacity: 1,
-//           display: "block"
-//         },
-//         to: {
-//           opacity: 0,
-//           display: "none"
-//         }
-//       });
-//     }
-//   }
-//
-//   function checkSearchParams() {
-//     if (window.innerWidth <= windowWidth) {
-//       return null;
-//     }
-//
-//
-//     const index = searchParams.get("id") as number | null;
-//
-//     if (index && poemsArr[index] !== undefined) {
-//       return +index;
-//     } else {
-//       return 0;
-//     }
-//   }
-//
-//   function changePoem(poem: number | null) {
-//     setPoemIndex(poem);
-//     let paramsString = "";
-//
-//     if (poem !== null) {
-//       const params = new URLSearchParams(searchParams.toString());
-//       params.set("poem", poemsArr[poem].url);
-//       params.set("id", poem.toString());
-//       paramsString = "?" + params.toString();
-//     }
-//
-//
-//     window.history.pushState(null, "", paramsString);
-//   }
-//
-//   return {
-//     poemIndex,
-//     changePoem,
-//     poemsListSpring,
-//     activePoemSpring
-//   };
-// };

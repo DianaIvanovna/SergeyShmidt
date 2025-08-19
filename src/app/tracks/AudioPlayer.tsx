@@ -2,7 +2,7 @@
 import React, { createRef } from "react";
 import ReactHowler from "react-howler";
 import raf from "raf";
-import { debounce, Grid, IconButton, SvgIcon, Typography } from "@mui/material";
+import { Box, debounce, Grid, IconButton, SvgIcon, Typography } from "@mui/material";
 import pauseIcon from "@/shared/icons/pause.svg";
 import loadingIcon from "@/shared/icons/loading.svg";
 import nextIcon from "@/shared/icons/next.svg";
@@ -82,6 +82,11 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
     this.handleSeekingChange = this.handleSeekingChange.bind(this);
     this.changeWindowSize = this.changeWindowSize.bind(this);
     this.changeWindowSize = debounce(this.changeWindowSize, 100);
+  }
+
+  getBlackBoxTop() {
+    console.log("this.refInput.current.offsetTop", this.refInput.current?.offsetTop, this.refInput.current?.offsetHeight)
+    return this.refInput.current ? `${this.refInput.current.offsetTop + (this.refInput.current.offsetHeight / 2)}px` : "100vh"
   }
 
   changeWindowSize() {
@@ -255,19 +260,22 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
             //@ts-ignore
             ref={(ref) => (this.player = ref)}
           />
+          <Box
+            className={"audio-player__black-box"}
+            sx={{
+              top: this.state.blackBoxTop,
+              bottom:0
+            }}
+          />
           {/*<Box*/}
-          {/*  className={"audio-player__black-box"}*/}
-          {/*  sx={{*/}
-          {/*    top: this.state.blackBoxTop*/}
-          {/*  }}*/}
+          {/*  className={"audio-player__black-box2"}*/}
+
           {/*/>*/}
           <Grid container wrap={"nowrap"}>
             {
               this.state.activeSong && <Image src={this.state.activeSong.image} alt={this.state.activeSong.title}
                                               className={"audio-player__image"} />
             }
-            {/*<Image src={this.state.activeSong.image} alt={this.state.activeSong.title}*/}
-            {/*       className={"audio-player__image"} />*/}
             <Grid container flexDirection={"column"} className="audio-player__input-container" wrap={"nowrap"}>
               <input
                 className="audio-player__input"

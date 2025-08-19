@@ -33,7 +33,7 @@ html {
 
 .tracks-item__about-title {
   @media (max-width: $--md) {
-    max-width: 180px;
+    max-width: 150px;
   }
 }
 
@@ -41,12 +41,28 @@ html {
 .audio-player {
 
   &__black-box {
+    //background: #1D1A1A;
+    //position: fixed;
+    //right: 0;
+    //bottom: 0;
+    //width: 100vw;
+    //z-index: -1;
     background: #1D1A1A;
-    position: fixed;
+    position: absolute;
     right: 0;
     bottom: 0;
     width: 100vw;
     z-index: -1;
+  }
+
+
+  &__black-box2{
+    background:#1D1A1A;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
   }
 
   &__image {

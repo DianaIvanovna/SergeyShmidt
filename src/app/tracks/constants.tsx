@@ -6,14 +6,27 @@ import poGorodyImage from "@/shared/images/PO_GORODU.jpg";
 export const songsArr = [
   {
     id: 4,
-    title: "Рассвет-Закат",
-    audioSrc: "",
+    title: "РАССВЕТ-ЗАКАТ",
+    audioSrc: "rasswet.wav",
     image: darkness,
-    about: [],
-    spotify: "https://open.spotify.com/album/6ZqKOmtKcsp5QpYbKwWsRO",
-    appleMusic: "https://music.apple.com/us/album/темнота-single/1754069648",
-    yandex: "https://music.yandex.ru/album/32228930",
-    disabled: true
+    about: [
+      {
+        title: "Release",
+        value: "2025/08/22"
+      },
+      {
+        title: "Lyrics, Music, Vocals, Guitar, Piano, Synth, Bass, Drums",
+        value: "Sergey Shmidt"
+      },
+      {
+        title: "Recording, Mixing, Mastering",
+        value: `Tonee Jukeboxx</br><a  class="songs-page__link" href="https://duomastering.de/" target="_blank" rel="noreferrer" >(Duomastering)</a>`
+      },
+    ],
+    spotify: "",
+    appleMusic: "",
+    yandex: "",
+    disabled: false
   },
   {
     id: 1,
@@ -26,7 +39,7 @@ export const songsArr = [
         value: "2024/06/28"
       },
       {
-        title: "Lyrics, Music, Arrangement, Vocals, Guitars, Bass",
+        title: "Lyrics, Music, Vocals, Guitars, Bass",
         value: "Sergey Shmidt"
       },
       {
@@ -55,7 +68,7 @@ export const songsArr = [
         value: "2023/03/10"
       },
       {
-        title: "Lyrics, Music, Arrangement, Vocals, Guitars, Bass",
+        title: "Lyrics, Music, Vocals, Guitars, Bass",
         value: "Sergey Shmidt"
       },
       {
@@ -91,7 +104,7 @@ export const songsArr = [
         value: "2022/05/13"
       },
       {
-        title: "Lyrics, Music, Arrangement, Vocals, Guitars, Bass",
+        title: "Lyrics, Music, Vocals, Guitars, Bass",
         value: "Sergey Shmidt"
       },
       {
