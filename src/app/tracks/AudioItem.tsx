@@ -96,7 +96,11 @@ export const AudioItem: FC<AudioItemProps> = ({ song }) => {
                         }}
                         key={key}
                       >
-                        <Typography variant={"hedvig_13/11"} className={"tracks-item__about-title"}>{item.title}</Typography>
+                        <Typography variant={"hedvig_13/11"} className={"tracks-item__about-title"}
+                                    dangerouslySetInnerHTML={{
+                                      __html: item.title
+                                    }}
+                        />
                         <Typography variant={"hedvig_13/11"}
                                     dangerouslySetInnerHTML={{
                                       __html: item.value

@@ -26,7 +26,7 @@ export const Header = () => {
       <Menu />
       <Link href={Routes.HOME}>
         <Typography variant={"h2"}>SERGEY
-          <br />SHMIDT(10)</Typography>
+          <br />SHMIDT(12)</Typography>
       </Link>
 
 

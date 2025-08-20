@@ -35,6 +35,7 @@ interface AudioPlayerState {
   seconds: number;
   duration: number;
   blackBoxTop: string;
+  userInteracted: boolean;
 }
 
 interface AudioPlayerStateProps {
@@ -49,6 +50,7 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
   _raf: number = 0;
   refInput = createRef<HTMLInputElement>();
   private unsubscribe: (() => void) | undefined;
+
 
   constructor(props: AudioPlayerStateProps) {
     super(props);
@@ -67,7 +69,8 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
       minutes: 0,
       seconds: 0,
       duration: 0,
-      blackBoxTop: "100vh"
+      blackBoxTop: "100vh",
+      userInteracted: false  // Флаг взаимодействия пользователя
     };
     this.handleToggle = this.handleToggle.bind(this);
     this.handleOnLoad = this.handleOnLoad.bind(this);
@@ -81,6 +84,7 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
     this.handleMouseUpSeek = this.handleMouseUpSeek.bind(this);
     this.handleSeekingChange = this.handleSeekingChange.bind(this);
     this.changeWindowSize = this.changeWindowSize.bind(this);
+    this.handleUserInteraction = this.handleUserInteraction.bind(this)
     this.changeWindowSize = debounce(this.changeWindowSize, 100);
   }
 
@@ -98,9 +102,22 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
     });
   }
 
+  // Добавляем обработчик взаимодействия пользователя
+   handleUserInteraction () {
+    if (!this.state.userInteracted) {
+      this.setState({
+        userInteracted: true
+      });
+    }
+  };
   componentDidMount() {
     this.changeWindowSize();
     window.addEventListener("resize", this.changeWindowSize);
+
+
+
+    window.addEventListener('click', this.handleUserInteraction);
+    window.addEventListener('touchstart', this.handleUserInteraction);
 
     this.unsubscribe = this.props.context.subscribe((state) => {
       this.setState({
@@ -125,6 +142,8 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
   componentWillUnmount() {
     this.clearRAF();
     window.removeEventListener("resize", this.changeWindowSize);
+    window.removeEventListener('click', this.handleUserInteraction);
+    window.removeEventListener('touchstart', this.handleUserInteraction);
     this.unsubscribe?.();
   }
 
@@ -374,7 +393,7 @@ class AudioPlayer extends React.Component<AudioPlayerStateProps, AudioPlayerStat
     return (
       <>
         {/* Скрытые плееры для предзагрузки всех песен */}
-        {songsArrNotDisabled.map(song => (<ReactHowler
+        {this.state.userInteracted && songsArrNotDisabled.map(song => (<ReactHowler
           key={`preload-${song.id}`}
           src={song.audioSrc}
           preload={true}

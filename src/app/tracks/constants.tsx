@@ -1,6 +1,7 @@
 import darkness from "@/shared/images/darkness.jpg";
 import FateImage from "@/shared/images/FATE.jpg";
 import poGorodyImage from "@/shared/images/PO_GORODU.jpg";
+import rasswet from "@/shared/images/rasswet.jpg";
 
 
 export const songsArr = [
@@ -8,14 +9,14 @@ export const songsArr = [
     id: 4,
     title: "РАССВЕТ-ЗАКАТ",
     audioSrc: "rasswet.wav",
-    image: darkness,
+    image: rasswet,
     about: [
       {
         title: "Release",
         value: "2025/08/22"
       },
       {
-        title: "Lyrics, Music, Vocals, Guitar, Piano, Synth, Bass, Drums",
+        title: "<span class='tracks-item__max-width'>Lyrics, Music, Vocals, Guitar, Piano, Synth, Bass, Drums</span>",
         value: "Sergey Shmidt"
       },
       {
@@ -39,7 +40,7 @@ export const songsArr = [
         value: "2024/06/28"
       },
       {
-        title: "Lyrics, Music, Vocals, Guitars, Bass",
+        title: "<span class='tracks-item__max-width'>Lyrics, Music, Vocals, Guitars, Bass</span>",
         value: "Sergey Shmidt"
       },
       {
@@ -68,7 +69,7 @@ export const songsArr = [
         value: "2023/03/10"
       },
       {
-        title: "Lyrics, Music, Vocals, Guitars, Bass",
+        title: "<span class='tracks-item__max-width'>Lyrics, Music, Vocals, Guitars, Bass</span>",
         value: "Sergey Shmidt"
       },
       {
@@ -104,7 +105,7 @@ export const songsArr = [
         value: "2022/05/13"
       },
       {
-        title: "Lyrics, Music, Vocals, Guitars, Bass",
+        title: "<span class='tracks-item__max-width'>Lyrics, Music, Vocals, Guitars, Bass</span>",
         value: "Sergey Shmidt"
       },
       {
