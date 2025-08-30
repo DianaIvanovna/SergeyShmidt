@@ -22,11 +22,11 @@ export const songsArr = [
       {
         title: "Recording, Mixing, Mastering",
         value: `Tonee Jukeboxx</br><a  class="songs-page__link" href="https://duomastering.de/" target="_blank" rel="noreferrer" >(Duomastering)</a>`
-      },
+      }
     ],
-    spotify: "",
-    appleMusic: "",
-    yandex: "",
+    spotify: "https://open.spotify.com/album/5b8Fh2aEhuz94oI1RGCzyb",
+    appleMusic: "https://music.apple.com/us/album/рассвет-закат-single/1833056691",
+    yandex: "https://music.yandex.ru/album/37985248",
     disabled: false
   },
   {
@@ -85,7 +85,7 @@ export const songsArr = [
         target="_blank"
         rel="noreferrer"
       >SCB-Music</a>`
-      },
+      }
     ],
     spotify: "https://open.spotify.com/album/3ySiYyEghhNxYjJwfTMZJx",
     appleMusic: "https://music.apple.com/us/album/fate-single/1671242220",

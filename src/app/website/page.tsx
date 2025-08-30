@@ -12,7 +12,7 @@ const persons = [
   {
     work: "Web-Design",
     name: "MAXIM PALVAL",
-    link: "https://t.me/mopsermax"
+    link: "https://t.me/pal_maks"
   },
 
   {

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "lint": "next lint",
-    "build": "next build",
+    "build": "rimraf out && next build",
     "start": "next build && next start",
     "predeploy": "rimraf out && next build  && echo '' > out/.nojekyll",
     "deploy": "rimraf out && next build  && echo '' > out/.nojekyll && gh-pages --dotfiles --dist out"

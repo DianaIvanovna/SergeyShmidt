@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 
 const repoName = "SergeyShmidt"; // Имя репозитория (точно как в URL)
-const isProd = process.env.NODE_ENV === "production";
+const isProd = false;//process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
   output: "export", // Главное: включаем статический экспорт
