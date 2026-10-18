@@ -2,9 +2,31 @@ import darkness from "@/shared/images/darkness.jpg";
 import FateImage from "@/shared/images/FATE.jpg";
 import poGorodyImage from "@/shared/images/PO_GORODU.jpg";
 import rasswet from "@/shared/images/rasswet.jpg";
+import musyka from "@/shared/images/MUSYKA.jpg";
 
 
 export const songsArr = [
+  {
+    id: 5,
+    title: "МУЗЫКА",
+    audioSrc: "MUSYKA.wav",
+    image: musyka,
+    about: [
+      {
+        title: "Release",
+        value: "2026/11/20"
+      },
+      {
+        title: "<span class='tracks-item__max-width'>Lyrics, Music, Vocals, Guitar, Piano, Synth, Bass, Drums</span>",
+        value: "Sergey Shmidt"
+      },
+      {
+        title: "Mixing, Mastering",
+        value: `Tonee Jukeboxx</br><a  class="songs-page__link" href="https://duomastering.de/" target="_blank" rel="noreferrer" >(Duomastering)</a>`
+      }
+    ],
+    disabled: false
+  },
   {
     id: 4,
     title: "РАССВЕТ-ЗАКАТ",
